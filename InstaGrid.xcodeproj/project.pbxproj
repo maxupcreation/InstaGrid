@@ -41,6 +41,7 @@
 			isa = PBXGroup;
 			children = (
 				9C1415CF23571B9300B301B9 /* InstaGrid */,
+				9CA733E223571C64003591F3 /* Supporting Files */,
 				9C1415CE23571B9300B301B9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,13 +59,44 @@
 			children = (
 				9C1415D023571B9300B301B9 /* AppDelegate.swift */,
 				9C1415D223571B9300B301B9 /* SceneDelegate.swift */,
-				9C1415D423571B9300B301B9 /* ViewController.swift */,
+				9CA733DF23571C05003591F3 /* Model */,
+				9CA733E023571C34003591F3 /* View */,
+				9CA733E123571C43003591F3 /* Controler */,
+			);
+			path = InstaGrid;
+			sourceTree = "<group>";
+		};
+		9CA733DF23571C05003591F3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9CA733E023571C34003591F3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9CA733E123571C43003591F3 /* Controler */ = {
+			isa = PBXGroup;
+			children = (
 				9C1415D623571B9300B301B9 /* Main.storyboard */,
+				9C1415D423571B9300B301B9 /* ViewController.swift */,
+			);
+			path = Controler;
+			sourceTree = "<group>";
+		};
+		9CA733E223571C64003591F3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				9C1415D923571B9900B301B9 /* Assets.xcassets */,
 				9C1415DB23571B9900B301B9 /* LaunchScreen.storyboard */,
 				9C1415DE23571B9900B301B9 /* Info.plist */,
 			);
-			path = InstaGrid;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +248,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "/Users/maxime/Dropbox/ADMIN/OPENCLASSROOM/PROJET4/InstaGrid/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -270,6 +303,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "/Users/maxime/Dropbox/ADMIN/OPENCLASSROOM/PROJET4/InstaGrid/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -285,7 +319,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = InstaGrid/Info.plist;
+				INFOPLIST_FILE = "/Users/maxime/Dropbox/ADMIN/OPENCLASSROOM/PROJET4/InstaGrid/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +336,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = InstaGrid/Info.plist;
+				INFOPLIST_FILE = "/Users/maxime/Dropbox/ADMIN/OPENCLASSROOM/PROJET4/InstaGrid/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
