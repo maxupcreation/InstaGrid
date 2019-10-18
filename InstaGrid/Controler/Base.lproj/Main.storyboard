@@ -24,7 +24,7 @@
                                             <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="KfE-Vw-ds3">
                                                 <rect key="frame" x="0.0" y="0.0" width="317" height="150"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="770" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCG-VP-U3i">
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="770" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCG-VP-U3i" userLabel="buttonPicture1">
                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -36,11 +36,8 @@
                                                                 <integer key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="addPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5S2-mS-iqp"/>
-                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rcg-Nz-raY">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rcg-Nz-raY" userLabel="buttonPicture2">
                                                         <rect key="frame" x="167" y="0.0" width="150" height="150"/>
                                                         <color key="backgroundColor" red="0.93791640229999995" green="0.92521065879999997" blue="0.90431679320000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -53,6 +50,9 @@
                                                                 <integer key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="addPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bl3-id-HcV"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -60,7 +60,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="8z4-hk-6hq">
                                                 <rect key="frame" x="0.0" y="164" width="317" height="150"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rri-bb-DGU">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rri-bb-DGU" userLabel="buttonPicture3">
                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                         <constraints>
@@ -74,7 +74,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FM1-0N-f7W">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FM1-0N-f7W" userLabel="buttonPicture4">
                                                         <rect key="frame" x="167" y="0.0" width="150" height="150"/>
                                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                         <constraints>
@@ -96,6 +96,7 @@
                                 <color key="backgroundColor" red="0.2220019822" green="0.49567880669999997" blue="0.61970846400000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="RCN-wy-LHW" secondAttribute="trailing" constant="28" id="5bU-zw-z3L"/>
+                                    <constraint firstItem="lCG-VP-U3i" firstAttribute="centerX" secondItem="YZA-kk-Dqb" secondAttribute="centerX" id="EHe-aR-YBQ"/>
                                     <constraint firstItem="RCN-wy-LHW" firstAttribute="top" secondItem="YZA-kk-Dqb" secondAttribute="top" constant="20" id="LDo-vY-kVA"/>
                                     <constraint firstAttribute="bottom" secondItem="RCN-wy-LHW" secondAttribute="bottom" constant="20" id="NX5-sr-S3b"/>
                                     <constraint firstAttribute="width" constant="374" id="hgn-zG-eA9"/>
@@ -156,10 +157,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="ButtonPicture2" destination="lCG-VP-U3i" id="aIC-e9-R5v"/>
-                        <outlet property="ButtonPicture3" destination="FM1-0N-f7W" id="pit-Ox-Ptl"/>
-                        <outlet property="ButtonPicture4" destination="rri-bb-DGU" id="kL8-j2-92x"/>
-                        <outlet property="buttonPicture" destination="lCG-VP-U3i" id="NEK-WT-GLR"/>
+                        <outlet property="buttonPicture1" destination="lCG-VP-U3i" id="Dvg-8M-R41"/>
+                        <outlet property="buttonPicture2" destination="Rcg-Nz-raY" id="eZg-eZ-KfU"/>
+                        <outlet property="buttonPicture3" destination="rri-bb-DGU" id="M5U-TS-Y08"/>
+                        <outlet property="buttonPicture4" destination="FM1-0N-f7W" id="t9w-mW-cDS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
