@@ -18,10 +18,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZA-kk-Dqb" userLabel="SquarePictureLayOut 3">
                                 <rect key="frame" x="20" y="271" width="374" height="354"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="RCN-wy-LHW">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="RCN-wy-LHW">
                                         <rect key="frame" x="29" y="20" width="317" height="314"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleAspectFill" distribution="equalSpacing" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="KfE-Vw-ds3">
+                                            <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="KfE-Vw-ds3">
                                                 <rect key="frame" x="0.0" y="0.0" width="317" height="150"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="770" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCG-VP-U3i">
@@ -37,7 +37,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="addPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q2n-sb-mLp"/>
+                                                            <action selector="addPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5S2-mS-iqp"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rcg-Nz-raY">
@@ -117,6 +117,9 @@
                                         <integer key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="ButtonLayout3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B7c-wY-pfO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQb-DG-M2j">
                                 <rect key="frame" x="286" y="727" width="80" height="80"/>
@@ -127,6 +130,9 @@
                                         <integer key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="ButtonLayout1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Re-p9-PfI"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pow-QQ-Q8c">
                                 <rect key="frame" x="167" y="727" width="80" height="80"/>
@@ -137,6 +143,9 @@
                                         <integer key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="ButtonLayout2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zq1-of-P4I"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.71764705880000002" green="0.84313725490000002" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -147,6 +156,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="ButtonPicture2" destination="lCG-VP-U3i" id="aIC-e9-R5v"/>
+                        <outlet property="ButtonPicture3" destination="FM1-0N-f7W" id="pit-Ox-Ptl"/>
+                        <outlet property="ButtonPicture4" destination="rri-bb-DGU" id="kL8-j2-92x"/>
                         <outlet property="buttonPicture" destination="lCG-VP-U3i" id="NEK-WT-GLR"/>
                     </connections>
                 </viewController>
