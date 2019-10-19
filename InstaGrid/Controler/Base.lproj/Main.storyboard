@@ -36,6 +36,9 @@
                                                                 <integer key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="addPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Be-cA-7gS"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rcg-Nz-raY" userLabel="buttonPicture2">
                                                         <rect key="frame" x="167" y="0.0" width="150" height="150"/>
@@ -50,9 +53,6 @@
                                                                 <integer key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="addPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bl3-id-HcV"/>
-                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -96,7 +96,6 @@
                                 <color key="backgroundColor" red="0.2220019822" green="0.49567880669999997" blue="0.61970846400000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="RCN-wy-LHW" secondAttribute="trailing" constant="28" id="5bU-zw-z3L"/>
-                                    <constraint firstItem="lCG-VP-U3i" firstAttribute="centerX" secondItem="YZA-kk-Dqb" secondAttribute="centerX" id="EHe-aR-YBQ"/>
                                     <constraint firstItem="RCN-wy-LHW" firstAttribute="top" secondItem="YZA-kk-Dqb" secondAttribute="top" constant="20" id="LDo-vY-kVA"/>
                                     <constraint firstAttribute="bottom" secondItem="RCN-wy-LHW" secondAttribute="bottom" constant="20" id="NX5-sr-S3b"/>
                                     <constraint firstAttribute="width" constant="374" id="hgn-zG-eA9"/>
