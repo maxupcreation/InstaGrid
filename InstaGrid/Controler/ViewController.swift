@@ -10,13 +10,11 @@ import UIKit
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-
-    @IBOutlet weak var buttonPicture1: UIImageView!
-    @IBOutlet weak var buttonPicture2: UIImageView!
-    @IBOutlet weak var buttonPicture3: UIImageView!
-    @IBOutlet weak var buttonPicture4: UIImageView!
+  
     
-    @IBAction func addPicture(_ sender: AnyObject) {
+    @IBOutlet var buttonPicture: [UIButton]!
+    
+    @IBAction func addPicture(_ sender: UIButton) {
            let image = UIImagePickerController()
            image.delegate = self
            image.sourceType = .photoLibrary
@@ -24,33 +22,32 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
            self.present (image,animated: true )
            }
     
-    func imagePickerController(_ picker: UIImagePickerController,
-    didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
-      buttonPicture1.image = info [.editedImage] as? UIImage
-       dismiss(animated : true, completion : nil)
+    func imagePickerController(_ picker: UIImagePickerController,_ sender : UIButton ,  didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+        if let image = info[.originalImage] as? UIImage {
+            for button in buttonPicture {
+                if button.tag == 0 {
+                    buttonPicture[0].setImage(image, for: .normal)
+            }
+          else if button.tag == 1 {
+                    buttonPicture[1].setImage(image, for: .normal)
+                }
+          else if button.tag == 2 {
+                    buttonPicture[2].setImage(image, for: .normal)
+        }
+            else if button.tag == 3 {
+                      buttonPicture[3].setImage(image, for: .normal)
+                }
+            }
+        }
     }
     
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    
-    @IBAction func ButtonLayout3(_ sender: Any) {
-           buttonPicture2.isHidden = true
-           buttonPicture3.isHidden = false
-    }
-   
-    @IBAction func ButtonLayout2(_ sender: Any) {
-        buttonPicture3.isHidden = true
-          buttonPicture2.isHidden = false
-    }
-   
-    
-    @IBAction func ButtonLayout1(_ sender: Any) {
-       buttonPicture2.isHidden = false
-        buttonPicture3.isHidden = false
-    }
+  
     
    
+  
 }
-

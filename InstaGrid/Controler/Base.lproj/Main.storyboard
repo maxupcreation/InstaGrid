@@ -40,7 +40,7 @@
                                                             <action selector="addPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Be-cA-7gS"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rcg-Nz-raY" userLabel="buttonPicture2">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rcg-Nz-raY" userLabel="buttonPicture2">
                                                         <rect key="frame" x="167" y="0.0" width="150" height="150"/>
                                                         <color key="backgroundColor" red="0.93791640229999995" green="0.92521065879999997" blue="0.90431679320000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -53,6 +53,9 @@
                                                                 <integer key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="addPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HlU-Qc-p5f"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -60,7 +63,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="8z4-hk-6hq">
                                                 <rect key="frame" x="0.0" y="164" width="317" height="150"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rri-bb-DGU" userLabel="buttonPicture3">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rri-bb-DGU" userLabel="buttonPicture3">
                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                         <constraints>
@@ -73,8 +76,11 @@
                                                                 <integer key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="addPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ciS-5o-vMA"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FM1-0N-f7W" userLabel="buttonPicture4">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FM1-0N-f7W" userLabel="buttonPicture4">
                                                         <rect key="frame" x="167" y="0.0" width="150" height="150"/>
                                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                         <constraints>
@@ -87,6 +93,9 @@
                                                                 <integer key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="addPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l2R-yx-ENV"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -117,9 +126,6 @@
                                         <integer key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="ButtonLayout3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B7c-wY-pfO"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQb-DG-M2j">
                                 <rect key="frame" x="286" y="727" width="80" height="80"/>
@@ -130,9 +136,6 @@
                                         <integer key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="ButtonLayout1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Re-p9-PfI"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pow-QQ-Q8c">
                                 <rect key="frame" x="167" y="727" width="80" height="80"/>
@@ -143,9 +146,6 @@
                                         <integer key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="ButtonLayout2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zq1-of-P4I"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.71764705880000002" green="0.84313725490000002" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -156,10 +156,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="buttonPicture1" destination="lCG-VP-U3i" id="Dvg-8M-R41"/>
-                        <outlet property="buttonPicture2" destination="Rcg-Nz-raY" id="eZg-eZ-KfU"/>
-                        <outlet property="buttonPicture3" destination="rri-bb-DGU" id="M5U-TS-Y08"/>
-                        <outlet property="buttonPicture4" destination="FM1-0N-f7W" id="t9w-mW-cDS"/>
+                        <outletCollection property="buttonPicture" destination="lCG-VP-U3i" collectionClass="NSMutableArray" id="HyN-7R-z0E"/>
+                        <outletCollection property="buttonPicture" destination="Rcg-Nz-raY" collectionClass="NSMutableArray" id="S3i-oY-CeZ"/>
+                        <outletCollection property="buttonPicture" destination="rri-bb-DGU" collectionClass="NSMutableArray" id="WOd-Pw-rcj"/>
+                        <outletCollection property="buttonPicture" destination="FM1-0N-f7W" collectionClass="NSMutableArray" id="ihK-IS-1VB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
