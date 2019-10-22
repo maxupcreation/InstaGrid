@@ -48,6 +48,18 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
   
     
-   
-  
+    @IBAction func buttonLayOut(_ sender: Any) {
+        buttonPicture[1].isHidden = true
+         buttonPicture[3].isHidden = false
+    }
+    
+    @IBAction func buttonLayOut2(_ sender: Any) {
+         buttonPicture[3].isHidden = true
+        buttonPicture[1].isHidden = false
+    }
+    
+    @IBAction func buttonLayout3(_ sender: Any) {
+         buttonPicture[1].isHidden = false
+        buttonPicture[3].isHidden = false
+    }
 }

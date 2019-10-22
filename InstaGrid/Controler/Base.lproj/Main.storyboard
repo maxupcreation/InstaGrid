@@ -117,41 +117,68 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vz-6f-iP8">
-                                <rect key="frame" x="48" y="727" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Layout 1"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQb-DG-M2j">
-                                <rect key="frame" x="286" y="727" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Layout 3"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pow-QQ-Q8c">
-                                <rect key="frame" x="167" y="727" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Layout 2"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="udN-Zh-gUy">
+                                <rect key="frame" x="48" y="727" width="318" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vz-6f-iP8">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="5ln-fC-7JM"/>
+                                            <constraint firstAttribute="width" secondItem="9vz-6f-iP8" secondAttribute="height" multiplier="1:1" id="82l-LH-Mct"/>
+                                        </constraints>
+                                        <state key="normal" image="Layout 1"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonLayOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vbv-ug-D8N"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pow-QQ-Q8c">
+                                        <rect key="frame" x="119" y="0.0" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="SQT-Mq-gPO"/>
+                                            <constraint firstAttribute="width" secondItem="Pow-QQ-Q8c" secondAttribute="height" multiplier="1:1" id="haW-cd-IZb"/>
+                                        </constraints>
+                                        <state key="normal" image="Layout 2"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonLayOut2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Ye-yk-0Wd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQb-DG-M2j">
+                                        <rect key="frame" x="238" y="0.0" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="iS8-bT-soW"/>
+                                            <constraint firstAttribute="width" secondItem="nQb-DG-M2j" secondAttribute="height" multiplier="1:1" id="n6I-s8-n6W"/>
+                                        </constraints>
+                                        <state key="normal" image="Layout 3"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonLayout3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gwI-wt-tBi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.71764705880000002" green="0.84313725490000002" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="udN-Zh-gUy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="5yf-sa-pes"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="udN-Zh-gUy" secondAttribute="bottom" constant="55" id="6hP-8O-kqA"/>
+                            <constraint firstItem="udN-Zh-gUy" firstAttribute="top" secondItem="YZA-kk-Dqb" secondAttribute="bottom" constant="102" id="P8c-IH-dqC"/>
                             <constraint firstItem="YZA-kk-Dqb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="aNI-EW-E3C"/>
                             <constraint firstItem="YZA-kk-Dqb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lZv-s8-wGL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="udN-Zh-gUy" secondAttribute="trailing" constant="48" id="r0o-UV-ZSo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
