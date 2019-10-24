@@ -6,6 +6,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Delm-Medium.otf">
+            <string>Delm-Medium</string>
+        </array>
+        <array key="ThirstySoftRegular.otf">
+            <string>ThirstySoftRegular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -105,10 +113,11 @@
                                 <color key="backgroundColor" red="0.2220019822" green="0.49567880669999997" blue="0.61970846400000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="RCN-wy-LHW" secondAttribute="trailing" constant="28" id="5bU-zw-z3L"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="374" id="BUc-uP-ZnU"/>
                                     <constraint firstItem="RCN-wy-LHW" firstAttribute="top" secondItem="YZA-kk-Dqb" secondAttribute="top" constant="20" id="LDo-vY-kVA"/>
                                     <constraint firstAttribute="bottom" secondItem="RCN-wy-LHW" secondAttribute="bottom" constant="20" id="NX5-sr-S3b"/>
                                     <constraint firstAttribute="width" constant="374" id="hgn-zG-eA9"/>
-                                    <constraint firstAttribute="width" secondItem="YZA-kk-Dqb" secondAttribute="height" multiplier="187:177" id="qef-9C-L0E"/>
+                                    <constraint firstAttribute="height" constant="354" id="tBe-fr-5fO"/>
                                     <constraint firstItem="RCN-wy-LHW" firstAttribute="leading" secondItem="YZA-kk-Dqb" secondAttribute="leading" constant="29" id="x8l-d0-EDE"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -170,19 +179,73 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qA4-0E-c9x">
+                                <rect key="frame" x="150" y="51" width="114.66666666666669" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qA4-0E-c9x" secondAttribute="height" multiplier="114:37" id="9i5-Pw-313"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="114.5" id="AD7-KD-Xk3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="29"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Swipe up to share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81t-sm-Rdh">
+                                <rect key="frame" x="38" y="231" width="339" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="81t-sm-Rdh" secondAttribute="height" multiplier="339:20" id="r0A-Zi-AWk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="18"/>
+                                <color key="textColor" red="0.99999064209999999" green="0.9999936223" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact" hidden="YES"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="^" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2Y-IS-dor">
+                                <rect key="frame" x="20" y="141" width="374" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="JOr-aL-VkI"/>
+                                    <constraint firstAttribute="width" secondItem="c2Y-IS-dor" secondAttribute="height" multiplier="374:87" constant="-98.873563218390814" id="lR7-fM-zDf"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="eyn-Ll-Khg"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="52"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="JOr-aL-VkI"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact" hidden="YES">
+                                    <mask key="constraints">
+                                        <include reference="JOr-aL-VkI"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.71764705880000002" green="0.84313725490000002" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="qA4-0E-c9x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="2ti-vy-ltW"/>
                             <constraint firstItem="udN-Zh-gUy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="5yf-sa-pes"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="udN-Zh-gUy" secondAttribute="bottom" constant="55" id="6hP-8O-kqA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c2Y-IS-dor" secondAttribute="trailing" constant="20" id="JgT-S6-jDj"/>
                             <constraint firstItem="udN-Zh-gUy" firstAttribute="top" secondItem="YZA-kk-Dqb" secondAttribute="bottom" constant="102" id="P8c-IH-dqC"/>
+                            <constraint firstItem="81t-sm-Rdh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="38" id="UL8-US-gTS"/>
+                            <constraint firstItem="qA4-0E-c9x" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="7" id="VxD-3P-raa"/>
                             <constraint firstItem="YZA-kk-Dqb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="aNI-EW-E3C"/>
+                            <constraint firstItem="YZA-kk-Dqb" firstAttribute="top" secondItem="81t-sm-Rdh" secondAttribute="bottom" constant="39" id="gg4-Gd-bY7"/>
                             <constraint firstItem="YZA-kk-Dqb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lZv-s8-wGL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="udN-Zh-gUy" secondAttribute="trailing" constant="48" id="r0o-UV-ZSo"/>
+                            <constraint firstItem="c2Y-IS-dor" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="x4J-re-5T9"/>
+                            <constraint firstItem="YZA-kk-Dqb" firstAttribute="top" secondItem="c2Y-IS-dor" secondAttribute="bottom" constant="20" id="za0-zP-y47"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="pbb-vE-hGu" appends="YES" id="5Sv-8E-hvv"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="SquarrePictureLayout" destination="YZA-kk-Dqb" id="2yp-Uw-2vG"/>
                         <outletCollection property="buttonPicture" destination="lCG-VP-U3i" collectionClass="NSMutableArray" id="HyN-7R-z0E"/>
                         <outletCollection property="buttonPicture" destination="Rcg-Nz-raY" collectionClass="NSMutableArray" id="S3i-oY-CeZ"/>
                         <outletCollection property="buttonPicture" destination="rri-bb-DGU" collectionClass="NSMutableArray" id="WOd-Pw-rcj"/>
@@ -190,6 +253,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="pbb-vE-hGu">
+                    <connections>
+                        <action selector="swipeForShare:" destination="BYZ-38-t0r" id="U6d-Gr-dKI"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="97.767857142857139"/>
         </scene>

@@ -10,47 +10,48 @@ import UIKit
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-  
+    var currentButton : UIButton?
     
     @IBOutlet var buttonPicture: [UIButton]!
+    @IBOutlet weak var SquarrePictureLayout: UIView!
     
     @IBAction func addPicture(_ sender: UIButton) {
-           let image = UIImagePickerController()
-           image.delegate = self
-           image.sourceType = .photoLibrary
-           image.allowsEditing = true
-           self.present (image,animated: true )
+        currentButton = sender
+           let imagePicker = UIImagePickerController()
+           imagePicker.delegate = self
+           imagePicker.sourceType = .photoLibrary
+           imagePicker.allowsEditing = false
+           present (imagePicker,animated: true, completion: nil )
            }
+
     
-    func imagePickerController(_ picker: UIImagePickerController,_ sender : UIButton ,  didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
-        if let image = info[.originalImage] as? UIImage {
-            for button in buttonPicture {
-                if button.tag == 0 {
-                    buttonPicture[0].setImage(image, for: .normal)
-            }
-          else if button.tag == 1 {
-                    buttonPicture[1].setImage(image, for: .normal)
-                }
-          else if button.tag == 2 {
-                    buttonPicture[2].setImage(image, for: .normal)
-        }
-            else if button.tag == 3 {
-                      buttonPicture[3].setImage(image, for: .normal)
-                }
-            }
+    func imagePickerController(_ picker: UIImagePickerController,  didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+        
+        picker.dismiss(animated: true, completion: nil)
+    if let image = info[.originalImage] as? UIImage {
+        currentButton!.setImage(image, for: .normal)
+        currentButton!.imageView?.contentMode = .scaleAspectFill
+    
+        
+            
         }
     }
     
-        
+
+   
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
   
     
     @IBAction func buttonLayOut(_ sender: Any) {
         buttonPicture[1].isHidden = true
          buttonPicture[3].isHidden = false
+   
+        
     }
     
     @IBAction func buttonLayOut2(_ sender: Any) {
@@ -62,4 +63,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
          buttonPicture[1].isHidden = false
         buttonPicture[3].isHidden = false
     }
-}
+    
+    @IBAction func swipeForShare(sender: UISwipeGestureRecognizer) {
+      
+          
+        }
+        
+    }
+    
+
+    
+
