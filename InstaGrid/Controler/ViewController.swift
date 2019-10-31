@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     var currentButton : UIButton?
+    var imageButton : UIImageView?
     
     @IBOutlet var buttonPicture: [UIButton]!
     @IBOutlet weak var squarrePictureLayout: UIView!
@@ -33,13 +34,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             currentButton!.imageView?.contentMode = .scaleAspectFill
             
             
-            
         }
     }
-    
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,26 +65,21 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     
     
+    func sharePhoto(){
+        imageButton = currentButton!.imageView
+        let activityViewController = UIActivityViewController(activityItems:[imageButton!], applicationActivities: nil)
+        present(activityViewController, animated: true, completion: nil)
+        
+    }
+    
     @IBAction func SwipeAction(_ sender: UISwipeGestureRecognizer) {
         UIView.animate(withDuration: 1) {
             self.squarrePictureLayout.transform = CGAffineTransform(translationX: 0, y: -200)
             self.squarrePictureLayout.alpha = 0
             
-            
-            
+            self.sharePhoto()
         }
-        
-        func sharePhoto(sender : UIActivityViewController){
-            let activityViewController = UIActivityViewController(activityItems: [currentButton!], applicationActivities: nil)
-            
-            present(activityViewController, animated: true, completion: nil)
-        }
-        
     }
-    
-    
-    
-    
 }
 
 
