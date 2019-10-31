@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     var currentButton : UIButton?
-    var imageButton : UIImageView?
+    var imageButton : UIImage?
     
     @IBOutlet var buttonPicture: [UIButton]!
     @IBOutlet weak var squarrePictureLayout: UIView!
@@ -66,9 +66,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     
     func sharePhoto(){
-        imageButton = currentButton!.imageView
+        imageButton = currentButton!.currentImage
         let activityViewController = UIActivityViewController(activityItems:[imageButton!], applicationActivities: nil)
         present(activityViewController, animated: true, completion: nil)
+        self.present(activityViewController, animated: true, completion : nil )
         
     }
     
@@ -76,7 +77,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         UIView.animate(withDuration: 1) {
             self.squarrePictureLayout.transform = CGAffineTransform(translationX: 0, y: -200)
             self.squarrePictureLayout.alpha = 0
-            
             self.sharePhoto()
         }
     }
