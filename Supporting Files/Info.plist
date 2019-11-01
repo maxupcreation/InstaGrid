@@ -22,10 +22,10 @@
 	<true/>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Save image</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Access your library to share with friends</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Access your camera</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>photos add description</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

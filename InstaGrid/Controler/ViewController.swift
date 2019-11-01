@@ -66,10 +66,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     
     func sharePhoto(){
-        imageButton = currentButton!.currentImage
+        imageButton = currentButton?.currentImage
         let activityViewController = UIActivityViewController(activityItems:[imageButton!], applicationActivities: nil)
-        present(activityViewController, animated: true, completion: nil)
-        self.present(activityViewController, animated: true, completion : nil )
+        self.present(activityViewController, animated: true, completion: nil)
         
     }
     
