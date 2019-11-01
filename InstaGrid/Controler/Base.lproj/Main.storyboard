@@ -213,7 +213,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="SquarrePictureLayout" destination="YZA-kk-Dqb" id="2yp-Uw-2vG"/>
+                        <outlet property="squarrePictureLayout" destination="YZA-kk-Dqb" id="Dqc-AD-noB"/>
                         <outletCollection property="buttonPicture" destination="lCG-VP-U3i" collectionClass="NSMutableArray" id="HyN-7R-z0E"/>
                         <outletCollection property="buttonPicture" destination="Rcg-Nz-raY" collectionClass="NSMutableArray" id="S3i-oY-CeZ"/>
                         <outletCollection property="buttonPicture" destination="rri-bb-DGU" collectionClass="NSMutableArray" id="WOd-Pw-rcj"/>
