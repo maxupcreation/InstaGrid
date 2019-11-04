@@ -14,12 +14,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     var currentButtonLayOut : UIButton?
     var imageButton : UIImage?
     
-    
     @IBOutlet var buttonPicture: [UIButton]!
     @IBOutlet weak var squarrePictureLayout: UIView!
     @IBOutlet var buttonLayout: [UIButton]!
     
-    
+    /// Permet d'ajouter des photos via la library
     @IBAction func addPicture(_ sender: UIButton) {
         currentButton = sender
         let imagePicker = UIImagePickerController()
@@ -29,12 +28,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         present (imagePicker,animated: true, completion: nil )
     }
     
-    
+    ///Change l'image des buttons avec l'image choisi
     func imagePickerController(_ picker: UIImagePickerController,  didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
         
         picker.dismiss(animated: true, completion: nil)
         if let image = info[.originalImage] as? UIImage {
             currentButton!.setImage(image, for: .normal)
+            //ne deforme pas l'image et s'adapte à l'espace
             currentButton!.imageView?.contentMode = .scaleAspectFill
             
             
@@ -48,22 +48,27 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         self.view.addGestureRecognizer(swipeGesture)
     }
     
+    /// Petite animation (fondu) des buttons Layout lorsqu'on clique dessus
+    func animateButtonLayOut(_ sender : UIButton) {
+        currentButtonLayOut = sender
+        self.currentButtonLayOut?.alpha = 0
+        UIView.animate(withDuration: 0.4) {
+        self.currentButtonLayOut?.alpha = 1
+        }
+    }
     
-    
+    // Les 3 buttons Layout, on change l'image en fonction
     
     @IBAction func buttonLayOut(_ sender: UIButton) {
-  buttonLayout[2].setImage(#imageLiteral(resourceName: "select1.png"), for: .normal)
+        animateButtonLayOut(sender); buttonLayout[2].setImage(#imageLiteral(resourceName: "select1.png"), for: .normal)
         buttonLayout[1].setImage(#imageLiteral(resourceName: "Layout 2.png"), for: .normal)
         buttonLayout[0].setImage(#imageLiteral(resourceName: "Layout 3.png"), for: .normal)
-
-        
-    
         buttonPicture[1].isHidden = true
         buttonPicture[3].isHidden = false
-        }
-    
+    }
     @IBAction func buttonLayOut2(_ sender: UIButton) {
-         buttonLayout[1].setImage(#imageLiteral(resourceName: "select2.png"), for: .normal)
+        animateButtonLayOut(sender);
+        buttonLayout[1].setImage(#imageLiteral(resourceName: "select2.png"), for: .normal)
         
         buttonLayout[2].setImage(#imageLiteral(resourceName: "Layout 1.png"), for: .normal)
         buttonLayout[0].setImage(#imageLiteral(resourceName: "Layout 3.png"), for: .normal)
@@ -71,25 +76,23 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         buttonPicture[3].isHidden = true
         buttonPicture[1].isHidden = false
     }
-    
     @IBAction func buttonLayout3(_ sender: UIButton) {
- 
+        animateButtonLayOut(sender);
         buttonLayout[0].setImage(#imageLiteral(resourceName: "select3.png"), for: .normal)
         
         buttonLayout[1].setImage(#imageLiteral(resourceName: "Layout 2.png"), for: .normal)
         buttonLayout[2].setImage(#imageLiteral(resourceName: "Layout 1.png"), for: .normal)
-       
+        
         buttonPicture[1].isHidden = false
         buttonPicture[3].isHidden = false
     }
     
-    
-    
-    
+    // On partage les images
     func sharePhoto(){
         imageButton = currentButton?.currentImage
         let activityViewController = UIActivityViewController(activityItems:[imageButton!], applicationActivities: nil)
         self.present(activityViewController, animated: true, completion: nil)
+        // Permet de faire l'animation inverse à la fermeture de la fenêtre de partage
         activityViewController.completionWithItemsHandler = {  activity, success, items, error in
             UIView.animate(withDuration: 0.5, animations: {
                 self.squarrePictureLayout.transform = .identity
@@ -103,6 +106,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         animateSwipe()
     }
     
+    /// Animation lors du swipe
     func animateSwipe () {
         UIView.animate(withDuration: 1) {
             
