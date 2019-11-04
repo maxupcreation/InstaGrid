@@ -14,6 +14,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     var currentButtonLayOut : UIButton?
     var imageButton : UIImage?
     
+    @IBOutlet weak var txtSwipeToShare: UILabel!
     @IBOutlet var buttonPicture: [UIButton]!
     @IBOutlet weak var squarrePictureLayout: UIView!
     @IBOutlet var buttonLayout: [UIButton]!
@@ -26,7 +27,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = false
         present (imagePicker,animated: true, completion: nil )
+        self.txtSwipeToShare.alpha = 0
+        UIView.animate(withDuration: 0.5){
+            self.txtSwipeToShare.text = "Swipe to share"
+            self.txtSwipeToShare.alpha = 1
+        }
     }
+    
     
     ///Change l'image des buttons avec l'image choisi
     func imagePickerController(_ picker: UIImagePickerController,  didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
@@ -36,8 +43,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             currentButton!.setImage(image, for: .normal)
             //ne deforme pas l'image et s'adapte à l'espace
             currentButton!.imageView?.contentMode = .scaleAspectFill
-            
-            
         }
     }
     
@@ -53,12 +58,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         currentButtonLayOut = sender
         self.currentButtonLayOut?.alpha = 0
         UIView.animate(withDuration: 0.4) {
-        self.currentButtonLayOut?.alpha = 1
+            self.currentButtonLayOut?.alpha = 1
         }
     }
     
     // Les 3 buttons Layout, on change l'image en fonction
-    
     @IBAction func buttonLayOut(_ sender: UIButton) {
         animateButtonLayOut(sender); buttonLayout[2].setImage(#imageLiteral(resourceName: "select1.png"), for: .normal)
         buttonLayout[1].setImage(#imageLiteral(resourceName: "Layout 2.png"), for: .normal)
@@ -79,7 +83,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBAction func buttonLayout3(_ sender: UIButton) {
         animateButtonLayOut(sender);
         buttonLayout[0].setImage(#imageLiteral(resourceName: "select3.png"), for: .normal)
-        
         buttonLayout[1].setImage(#imageLiteral(resourceName: "Layout 2.png"), for: .normal)
         buttonLayout[2].setImage(#imageLiteral(resourceName: "Layout 1.png"), for: .normal)
         
@@ -103,9 +106,21 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     
     @IBAction func SwipeAction(_ sender: UISwipeGestureRecognizer) {
-        animateSwipe()
+        imageButton = currentButton?.currentImage
+        if imageButton != nil {
+            animateSwipe()
+        } else {
+            UIView.animate(withDuration: 0.2){
+                self.txtSwipeToShare.text = "Vous n'avez pas choisi d'image à partager ! "
+                self.txtSwipeToShare.transform =
+                    CGAffineTransform(translationX: 0 , y:-15)
+            }
+            UIView.animate(withDuration: 0.4){
+                self.txtSwipeToShare.text = "Vous n'avez pas choisi d'image à partager ! "
+                self.txtSwipeToShare.transform = .identity
+            }
+        }
     }
-    
     /// Animation lors du swipe
     func animateSwipe () {
         UIView.animate(withDuration: 1) {
@@ -114,10 +129,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             self.squarrePictureLayout.alpha = 0
             self.sharePhoto()
         }
-        
     }
-    
-    
 }
 
 
