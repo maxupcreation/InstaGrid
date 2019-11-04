@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C00D463236F3FB50083A38A /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C00D461236F3FB50083A38A /* Delm-Medium.otf */; };
+		9C00D464236F3FB50083A38A /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C00D462236F3FB50083A38A /* ThirstySoftRegular.otf */; };
 		9C1415D123571B9300B301B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1415D023571B9300B301B9 /* AppDelegate.swift */; };
 		9C1415D323571B9300B301B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1415D223571B9300B301B9 /* SceneDelegate.swift */; };
 		9C1415D523571B9300B301B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1415D423571B9300B301B9 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C00D461236F3FB50083A38A /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
+		9C00D462236F3FB50083A38A /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
 		9C1415CD23571B9300B301B9 /* InstaGrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaGrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C1415D023571B9300B301B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C1415D223571B9300B301B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 		9CA733E223571C64003591F3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9C00D461236F3FB50083A38A /* Delm-Medium.otf */,
+				9C00D462236F3FB50083A38A /* ThirstySoftRegular.otf */,
 				9C1415D923571B9900B301B9 /* Assets.xcassets */,
 				9C1415DB23571B9900B301B9 /* LaunchScreen.storyboard */,
 				9C1415DE23571B9900B301B9 /* Info.plist */,
@@ -159,6 +165,8 @@
 			files = (
 				9C1415DD23571B9900B301B9 /* LaunchScreen.storyboard in Resources */,
 				9C1415DA23571B9900B301B9 /* Assets.xcassets in Resources */,
+				9C00D464236F3FB50083A38A /* ThirstySoftRegular.otf in Resources */,
+				9C00D463236F3FB50083A38A /* Delm-Medium.otf in Resources */,
 				9C1415D823571B9300B301B9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

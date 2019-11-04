@@ -11,10 +11,14 @@ import UIKit
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     var currentButton : UIButton?
+    var currentButtonLayOut : UIButton?
     var imageButton : UIImage?
+    
     
     @IBOutlet var buttonPicture: [UIButton]!
     @IBOutlet weak var squarrePictureLayout: UIView!
+    @IBOutlet var buttonLayout: [UIButton]!
+    
     
     @IBAction func addPicture(_ sender: UIButton) {
         currentButton = sender
@@ -46,22 +50,39 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     
     
-    @IBAction func buttonLayOut(_ sender: Any) {
+    
+    @IBAction func buttonLayOut(_ sender: UIButton) {
+  buttonLayout[2].setImage(#imageLiteral(resourceName: "select1.png"), for: .normal)
+        buttonLayout[1].setImage(#imageLiteral(resourceName: "Layout 2.png"), for: .normal)
+        buttonLayout[0].setImage(#imageLiteral(resourceName: "Layout 3.png"), for: .normal)
+
+        
+    
         buttonPicture[1].isHidden = true
         buttonPicture[3].isHidden = false
-        
-        
-    }
+        }
     
-    @IBAction func buttonLayOut2(_ sender: Any) {
+    @IBAction func buttonLayOut2(_ sender: UIButton) {
+         buttonLayout[1].setImage(#imageLiteral(resourceName: "select2.png"), for: .normal)
+        
+        buttonLayout[2].setImage(#imageLiteral(resourceName: "Layout 1.png"), for: .normal)
+        buttonLayout[0].setImage(#imageLiteral(resourceName: "Layout 3.png"), for: .normal)
+        
         buttonPicture[3].isHidden = true
         buttonPicture[1].isHidden = false
     }
     
-    @IBAction func buttonLayout3(_ sender: Any) {
+    @IBAction func buttonLayout3(_ sender: UIButton) {
+ 
+        buttonLayout[0].setImage(#imageLiteral(resourceName: "select3.png"), for: .normal)
+        
+        buttonLayout[1].setImage(#imageLiteral(resourceName: "Layout 2.png"), for: .normal)
+        buttonLayout[2].setImage(#imageLiteral(resourceName: "Layout 1.png"), for: .normal)
+       
         buttonPicture[1].isHidden = false
         buttonPicture[3].isHidden = false
     }
+    
     
     
     
@@ -69,16 +90,30 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         imageButton = currentButton?.currentImage
         let activityViewController = UIActivityViewController(activityItems:[imageButton!], applicationActivities: nil)
         self.present(activityViewController, animated: true, completion: nil)
-        
+        activityViewController.completionWithItemsHandler = {  activity, success, items, error in
+            UIView.animate(withDuration: 0.5, animations: {
+                self.squarrePictureLayout.transform = .identity
+                self.squarrePictureLayout.alpha = 1
+            }, completion: nil)
+        }
     }
     
+    
     @IBAction func SwipeAction(_ sender: UISwipeGestureRecognizer) {
+        animateSwipe()
+    }
+    
+    func animateSwipe () {
         UIView.animate(withDuration: 1) {
+            
             self.squarrePictureLayout.transform = CGAffineTransform(translationX: 0, y: -200)
             self.squarrePictureLayout.alpha = 0
             self.sharePhoto()
         }
+        
     }
+    
+    
 }
 
 
