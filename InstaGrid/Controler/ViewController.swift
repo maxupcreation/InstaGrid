@@ -13,6 +13,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     var currentButton : UIButton?
     var currentButtonLayOut : UIButton?
     var imageButton : UIImage?
+    var photosArray = [UIImage]()
     
     @IBOutlet weak var txtSwipeToShare: UILabel!
     @IBOutlet var buttonPicture: [UIButton]!
@@ -27,6 +28,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = false
         present (imagePicker,animated: true, completion: nil )
+        //Animation et changement du texte à la fermture de la fenêtre de partage
         self.txtSwipeToShare.alpha = 0
         UIView.animate(withDuration: 0.5){
             self.txtSwipeToShare.text = "Swipe to share"
@@ -43,6 +45,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             currentButton!.setImage(image, for: .normal)
             //ne deforme pas l'image et s'adapte à l'espace
             currentButton!.imageView?.contentMode = .scaleAspectFill
+            photosArray.append(image)
         }
     }
     
@@ -95,6 +98,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         imageButton = currentButton?.currentImage
         let activityViewController = UIActivityViewController(activityItems:[imageButton!], applicationActivities: nil)
         self.present(activityViewController, animated: true, completion: nil)
+        
         // Permet de faire l'animation inverse à la fermeture de la fenêtre de partage
         activityViewController.completionWithItemsHandler = {  activity, success, items, error in
             UIView.animate(withDuration: 0.5, animations: {
@@ -104,10 +108,19 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
     }
     
+    /// On controle s'il y a au moins une image pour partager
+    func controlImageButton () -> Bool {
+        if photosArray.count > 0 {
+            return true
+        }
+        else {
+            return false
+        }
+        return true
+    }
     
     @IBAction func SwipeAction(_ sender: UISwipeGestureRecognizer) {
-        imageButton = currentButton?.currentImage
-        if imageButton != nil {
+        if controlImageButton() == true  {
             animateSwipe()
         } else {
             UIView.animate(withDuration: 0.2){

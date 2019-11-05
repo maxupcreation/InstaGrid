@@ -64,7 +64,7 @@
                                             <constraint firstAttribute="width" constant="80" id="iS8-bT-soW"/>
                                             <constraint firstAttribute="width" secondItem="nQb-DG-M2j" secondAttribute="height" multiplier="1:1" id="n6I-s8-n6W"/>
                                         </constraints>
-                                        <state key="normal" image="Layout 3"/>
+                                        <state key="normal" image="select3"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="5"/>
@@ -248,7 +248,7 @@
         <image name="Arrow Up" width="13.333333015441895" height="9.6666669845581055"/>
         <image name="Layout 1" width="80" height="80"/>
         <image name="Layout 2" width="80" height="80"/>
-        <image name="Layout 3" width="80" height="80"/>
         <image name="Plus" width="40" height="40"/>
+        <image name="select3" width="80" height="80"/>
     </resources>
 </document>
