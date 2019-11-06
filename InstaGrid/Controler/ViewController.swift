@@ -67,28 +67,19 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     // Les 3 buttons Layout, on change l'image en fonction
     @IBAction func buttonLayOut(_ sender: UIButton) {
-        animateButtonLayOut(sender); buttonLayout[2].setImage(#imageLiteral(resourceName: "select1.png"), for: .normal)
-        buttonLayout[1].setImage(#imageLiteral(resourceName: "Layout 2.png"), for: .normal)
-        buttonLayout[0].setImage(#imageLiteral(resourceName: "Layout 3.png"), for: .normal)
+        animateButtonLayOut(sender); buttonLayout[2].setBackgroundImage(#imageLiteral(resourceName: "select1.png"), for: .normal)
         buttonPicture[1].isHidden = true
         buttonPicture[3].isHidden = false
     }
     @IBAction func buttonLayOut2(_ sender: UIButton) {
         animateButtonLayOut(sender);
-        buttonLayout[1].setImage(#imageLiteral(resourceName: "select2.png"), for: .normal)
-        
-        buttonLayout[2].setImage(#imageLiteral(resourceName: "Layout 1.png"), for: .normal)
-        buttonLayout[0].setImage(#imageLiteral(resourceName: "Layout 3.png"), for: .normal)
-        
+        buttonLayout[1].setBackgroundImage(#imageLiteral(resourceName: "select2.png"), for: .normal)
         buttonPicture[3].isHidden = true
         buttonPicture[1].isHidden = false
     }
     @IBAction func buttonLayout3(_ sender: UIButton) {
         animateButtonLayOut(sender);
-        buttonLayout[0].setImage(#imageLiteral(resourceName: "select3.png"), for: .normal)
-        buttonLayout[1].setImage(#imageLiteral(resourceName: "Layout 2.png"), for: .normal)
-        buttonLayout[2].setImage(#imageLiteral(resourceName: "Layout 1.png"), for: .normal)
-        
+        buttonLayout[0].setBackgroundImage(#imageLiteral(resourceName: "select3.png"), for: .normal)
         buttonPicture[1].isHidden = false
         buttonPicture[3].isHidden = false
     }
@@ -108,7 +99,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
     }
     
-    /// On controle s'il y a au moins une image pour partager
+    /// On controle s'il y a au moins une image dans le tableau pour partager
     func controlImageButton () -> Bool {
         if photosArray.count > 0 {
             return true
