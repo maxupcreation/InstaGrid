@@ -28,10 +28,6 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vz-6f-iP8">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="5ln-fC-7JM"/>
-                                            <constraint firstAttribute="width" secondItem="9vz-6f-iP8" secondAttribute="height" multiplier="1:1" id="82l-LH-Mct"/>
-                                        </constraints>
                                         <state key="normal" image="Layout 1"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -44,10 +40,6 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pow-QQ-Q8c">
                                         <rect key="frame" x="119" y="0.0" width="80" height="80"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="SQT-Mq-gPO"/>
-                                            <constraint firstAttribute="width" secondItem="Pow-QQ-Q8c" secondAttribute="height" multiplier="1:1" id="haW-cd-IZb"/>
-                                        </constraints>
                                         <state key="normal" image="Layout 2"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -60,10 +52,6 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQb-DG-M2j">
                                         <rect key="frame" x="238" y="0.0" width="80" height="80"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="iS8-bT-soW"/>
-                                            <constraint firstAttribute="width" secondItem="nQb-DG-M2j" secondAttribute="height" multiplier="1:1" id="n6I-s8-n6W"/>
-                                        </constraints>
                                         <state key="normal" image="select3"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -77,16 +65,16 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZA-kk-Dqb" userLabel="SquarePictureLayOut 3">
-                                <rect key="frame" x="38" y="281" width="338" height="334"/>
+                                <rect key="frame" x="38" y="281" width="344" height="343"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="RCN-wy-LHW">
-                                        <rect key="frame" x="11" y="10" width="317" height="314"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="spatial" fixedFrame="YES" axis="vertical" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="RCN-wy-LHW">
+                                        <rect key="frame" x="11" y="10" width="320.66666666666669" height="322.66666666666669"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="KfE-Vw-ds3">
-                                                <rect key="frame" x="0.0" y="0.0" width="317" height="150"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="KfE-Vw-ds3">
+                                                <rect key="frame" x="0.0" y="0.0" width="320.66666666666669" height="154.33333333333334"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="770" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" id="lCG-VP-U3i" userLabel="buttonPicture1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="154.33333333333334" height="154.33333333333334"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -103,11 +91,10 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rcg-Nz-raY" userLabel="buttonPicture2">
-                                                        <rect key="frame" x="167" y="0.0" width="150" height="150"/>
+                                                        <rect key="frame" x="166.33333333333331" y="0.0" width="154.33333333333331" height="154.33333333333334"/>
                                                         <color key="backgroundColor" red="0.93791640229999995" green="0.92521065879999997" blue="0.90431679320000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Rcg-Nz-raY" secondAttribute="height" multiplier="1:1" id="ZWl-7X-R0B"/>
-                                                            <constraint firstAttribute="height" constant="150" id="c3d-Gm-lCf"/>
                                                         </constraints>
                                                         <state key="normal" image="Plus"/>
                                                         <userDefinedRuntimeAttributes>
@@ -122,14 +109,13 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="8z4-hk-6hq">
-                                                <rect key="frame" x="0.0" y="164" width="317" height="150"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="8z4-hk-6hq">
+                                                <rect key="frame" x="0.0" y="168.33333333333331" width="320.66666666666669" height="154.33333333333331"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rri-bb-DGU" userLabel="buttonPicture3">
-                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="154.33333333333334" height="154.33333333333334"/>
                                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="150" id="S2b-5s-Xr3"/>
                                                             <constraint firstAttribute="width" secondItem="rri-bb-DGU" secondAttribute="height" multiplier="1:1" id="qyf-nT-p1S"/>
                                                         </constraints>
                                                         <state key="normal" image="Plus"/>
@@ -142,12 +128,11 @@
                                                             <action selector="addPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ciS-5o-vMA"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FM1-0N-f7W" userLabel="buttonPicture4">
-                                                        <rect key="frame" x="167" y="0.0" width="150" height="150"/>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="237" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FM1-0N-f7W" userLabel="buttonPicture4">
+                                                        <rect key="frame" x="166.33333333333331" y="0.0" width="154.33333333333331" height="154.33333333333334"/>
                                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="FM1-0N-f7W" secondAttribute="height" multiplier="1:1" id="G5x-4y-O8U"/>
-                                                            <constraint firstAttribute="height" constant="150" id="Lfh-OZ-hHQ"/>
                                                         </constraints>
                                                         <state key="normal" image="Plus"/>
                                                         <userDefinedRuntimeAttributes>
@@ -166,13 +151,9 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.2220019822" green="0.49567880669999997" blue="0.61970846400000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="RCN-wy-LHW" secondAttribute="trailing" constant="10" id="5bU-zw-z3L"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="338" id="BUc-uP-ZnU"/>
-                                    <constraint firstItem="RCN-wy-LHW" firstAttribute="top" secondItem="YZA-kk-Dqb" secondAttribute="top" constant="10" id="LDo-vY-kVA"/>
-                                    <constraint firstAttribute="bottom" secondItem="RCN-wy-LHW" secondAttribute="bottom" constant="10" id="NX5-sr-S3b"/>
-                                    <constraint firstAttribute="width" constant="338" id="hgn-zG-eA9"/>
-                                    <constraint firstAttribute="height" constant="334" id="tBe-fr-5fO"/>
-                                    <constraint firstItem="RCN-wy-LHW" firstAttribute="leading" secondItem="YZA-kk-Dqb" secondAttribute="leading" constant="11" id="x8l-d0-EDE"/>
+                                    <constraint firstAttribute="width" constant="344" id="hgn-zG-eA9"/>
+                                    <constraint firstAttribute="height" constant="343" id="tBe-fr-5fO"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -213,10 +194,10 @@
                             <constraint firstItem="udN-Zh-gUy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="5yf-sa-pes"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="udN-Zh-gUy" secondAttribute="bottom" constant="55" id="6hP-8O-kqA"/>
                             <constraint firstItem="YZA-kk-Dqb" firstAttribute="top" secondItem="YHI-C0-f7u" secondAttribute="bottom" constant="108" id="EIm-3J-sZG"/>
-                            <constraint firstItem="udN-Zh-gUy" firstAttribute="top" secondItem="YZA-kk-Dqb" secondAttribute="bottom" constant="112" id="P8c-IH-dqC"/>
+                            <constraint firstItem="udN-Zh-gUy" firstAttribute="top" secondItem="YZA-kk-Dqb" secondAttribute="bottom" constant="103" id="P8c-IH-dqC"/>
                             <constraint firstItem="qA4-0E-c9x" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="11" id="VxD-3P-raa"/>
-                            <constraint firstItem="YZA-kk-Dqb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="aNI-EW-E3C"/>
-                            <constraint firstItem="YZA-kk-Dqb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lZv-s8-wGL"/>
+                            <constraint firstItem="YZA-kk-Dqb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="5" id="aNI-EW-E3C"/>
+                            <constraint firstItem="YZA-kk-Dqb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="3" id="lZv-s8-wGL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="udN-Zh-gUy" secondAttribute="trailing" constant="48" id="r0o-UV-ZSo"/>
                             <constraint firstItem="YHI-C0-f7u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="190" id="tGp-dW-qSa"/>
                         </constraints>
