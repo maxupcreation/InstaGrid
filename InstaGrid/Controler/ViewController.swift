@@ -51,10 +51,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let swipeGesture = UISwipeGestureRecognizer(target: self, action:#selector(SwipeAction(_:)))
-        swipeGesture.direction = .up
-        self.view.addGestureRecognizer(swipeGesture)
-    }
+        let topSwipeGesture = UISwipeGestureRecognizer(target: self, action:#selector(SwipeAction(_:)))
+        topSwipeGesture.direction = .up
+         self.view.addGestureRecognizer(topSwipeGesture)
+        
+        let leftSwipeGesture = UISwipeGestureRecognizer(target: self, action:#selector(SwipeAction(_:)))
+                   leftSwipeGesture.direction = .left
+             self.view.addGestureRecognizer(leftSwipeGesture)
+               }
+       
     
     /// Petite animation (fondu) des buttons Layout lorsqu'on clique dessus
     func animateButtonLayOut(_ sender : UIButton) {
@@ -67,19 +72,25 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     // Les 3 buttons Layout, on change l'image en fonction
     @IBAction func buttonLayOut(_ sender: UIButton) {
-        animateButtonLayOut(sender); buttonLayout[2].setBackgroundImage(#imageLiteral(resourceName: "select1.png"), for: .normal)
+        animateButtonLayOut(sender); buttonLayout[2].setImage(#imageLiteral(resourceName: "select1.png"), for: .normal)
+        buttonLayout[1].setImage(#imageLiteral(resourceName: "Layout 2.png"), for: .normal)
+        buttonLayout[0].setImage(#imageLiteral(resourceName: "Layout 3.png"), for: .normal)
         buttonPicture[1].isHidden = true
         buttonPicture[3].isHidden = false
     }
     @IBAction func buttonLayOut2(_ sender: UIButton) {
         animateButtonLayOut(sender);
-        buttonLayout[1].setBackgroundImage(#imageLiteral(resourceName: "select2.png"), for: .normal)
+        buttonLayout[1].setImage(#imageLiteral(resourceName: "select2.png"), for: .normal)
+        buttonLayout[2].setImage(#imageLiteral(resourceName: "Layout 1.png"), for: .normal)
+        buttonLayout[0].setImage(#imageLiteral(resourceName: "Layout 3.png"), for: .normal)
         buttonPicture[3].isHidden = true
         buttonPicture[1].isHidden = false
     }
     @IBAction func buttonLayout3(_ sender: UIButton) {
         animateButtonLayOut(sender);
-        buttonLayout[0].setBackgroundImage(#imageLiteral(resourceName: "select3.png"), for: .normal)
+        buttonLayout[0].setImage(#imageLiteral(resourceName: "select3.png"), for: .normal)
+        buttonLayout[1].setImage(#imageLiteral(resourceName: "Layout 2.png"), for: .normal)
+        buttonLayout[2].setImage(#imageLiteral(resourceName: "Layout 1.png"), for: .normal)
         buttonPicture[1].isHidden = false
         buttonPicture[3].isHidden = false
     }
@@ -115,24 +126,31 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             animateSwipe()
         } else {
             UIView.animate(withDuration: 0.2){
-                self.txtSwipeToShare.text = "Vous n'avez pas choisi d'image à partager ! "
+                self.txtSwipeToShare.text = "Vous n'avez pas choisi \n d'image à partager ! "
                 self.txtSwipeToShare.transform =
                     CGAffineTransform(translationX: 0 , y:-15)
             }
             UIView.animate(withDuration: 0.4){
-                self.txtSwipeToShare.text = "Vous n'avez pas choisi d'image à partager ! "
                 self.txtSwipeToShare.transform = .identity
             }
         }
     }
     /// Animation lors du swipe
     func animateSwipe () {
-        UIView.animate(withDuration: 1) {
-            
-            self.squarrePictureLayout.transform = CGAffineTransform(translationX: 0, y: -200)
-            self.squarrePictureLayout.alpha = 0
-            self.sharePhoto()
+        if UIDevice.current.orientation.isPortrait {
+            UIView.animate(withDuration: 1) {
+                
+                self.squarrePictureLayout.transform = CGAffineTransform(translationX: 0, y: -200)
+                self.squarrePictureLayout.alpha = 0
+            }
+        } else {
+            UIView.animate(withDuration: 1){
+                self.squarrePictureLayout.transform = CGAffineTransform(translationX: -200, y: 0)
+                self.squarrePictureLayout.alpha = 0
+                
+            }
         }
+        self.sharePhoto()
     }
 }
 
