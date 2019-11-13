@@ -21,7 +21,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet var buttonLayout: [UIButton]!
     
     /// Permet d'ajouter des photos via la library
-    @IBAction func addPicture(_ sender: UIButton) {
+    @IBAction func didTapAddPicture(_ sender: UIButton) {
         currentButton = sender
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -53,13 +53,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         super.viewDidLoad()
         let topSwipeGesture = UISwipeGestureRecognizer(target: self, action:#selector(SwipeAction(_:)))
         topSwipeGesture.direction = .up
-         self.view.addGestureRecognizer(topSwipeGesture)
+        self.view.addGestureRecognizer(topSwipeGesture)
         
         let leftSwipeGesture = UISwipeGestureRecognizer(target: self, action:#selector(SwipeAction(_:)))
-                   leftSwipeGesture.direction = .left
-             self.view.addGestureRecognizer(leftSwipeGesture)
-               }
-       
+        leftSwipeGesture.direction = .left
+        self.view.addGestureRecognizer(leftSwipeGesture)
+    }
+    
     
     /// Petite animation (fondu) des buttons Layout lorsqu'on clique dessus
     func animateButtonLayOut(_ sender : UIButton) {
@@ -115,10 +115,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         if photosArray.count > 0 {
             return true
         }
-        else {
-            return false
-        }
-        return true
+        return false
     }
     
     @IBAction func SwipeAction(_ sender: UISwipeGestureRecognizer) {
