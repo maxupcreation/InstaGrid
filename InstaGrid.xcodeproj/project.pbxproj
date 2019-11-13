@@ -80,6 +80,7 @@
 		9CA733E023571C34003591F3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9C1415D623571B9300B301B9 /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -87,7 +88,6 @@
 		9CA733E123571C43003591F3 /* Controler */ = {
 			isa = PBXGroup;
 			children = (
-				9C1415D623571B9300B301B9 /* Main.storyboard */,
 				9C1415D423571B9300B301B9 /* ViewController.swift */,
 			);
 			path = Controler;
@@ -193,7 +193,8 @@
 				9C1415D723571B9300B301B9 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
+			path = InstaGrid/View;
+			sourceTree = SOURCE_ROOT;
 		};
 		9C1415DB23571B9900B301B9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;

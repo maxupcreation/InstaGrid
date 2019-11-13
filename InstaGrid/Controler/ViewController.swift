@@ -123,7 +123,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     @IBAction func SwipeAction(_ sender: UISwipeGestureRecognizer) {
         if controlImageButton() == true  {
-            animateSwipe()
+            animateSwipeAndShare()
         } else {
             UIView.animate(withDuration: 0.2){
                 self.txtSwipeToShare.text = "Vous n'avez pas choisi \n d'image à partager ! "
@@ -136,7 +136,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
     }
     /// Animation lors du swipe
-    func animateSwipe () {
+    func animateSwipeAndShare () {
         if UIDevice.current.orientation.isPortrait {
             UIView.animate(withDuration: 1) {
                 
