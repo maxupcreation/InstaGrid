@@ -21,7 +21,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet var buttonLayout: [UIButton]!
     
     /// Permet d'ajouter des photos via la library
-    @IBAction func didTapAddPicture(_ sender: UIButton) {
+    @IBAction private func didTapAddPicture(_ sender: UIButton) {
         currentButton = sender
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -70,43 +70,54 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
     }
     
+    
+    func changeImageButtonLayoutIfSelected (_ sender : UIButton) {
+        let tagButtonLayout = currentButtonLayOut?.tag
+        switch tagButtonLayout {
+        case 1: buttonLayout[0].setImage(#imageLiteral(resourceName: "Selected.png") , for: .normal)
+        buttonLayout[2].setImage(nil, for: .normal)
+        buttonLayout[1].setImage(nil, for: .normal)
+        buttonPicture[0].isHidden = true
+        buttonPicture[3].isHidden = false
+        case 2: buttonLayout[1].setImage(#imageLiteral(resourceName: "Selected.png") , for: .normal)
+        buttonLayout[0].setImage(nil, for: .normal)
+        buttonLayout[2].setImage(nil, for: .normal)
+        buttonPicture[0].isHidden = false
+        buttonPicture[3].isHidden = true
+            
+            
+        case 3: buttonLayout[2].setImage(#imageLiteral(resourceName: "Selected.png") , for: .normal)
+        buttonLayout[0].setImage(nil, for: .normal)
+        buttonLayout[1].setImage(nil, for: .normal)
+        buttonPicture[0].isHidden = false
+        buttonPicture[3].isHidden = false
+            
+        default : break
+            
+        }
+    }
+    
+    
+    
     // Les 3 buttons Layout, on change l'image en fonction
     @IBAction func buttonLayOut(_ sender: UIButton) {
-        animateButtonLayOut(sender); buttonLayout[2].setImage(#imageLiteral(resourceName: "select1.png"), for: .normal)
-        buttonLayout[1].setImage(#imageLiteral(resourceName: "Layout 2.png"), for: .normal)
-        buttonLayout[0].setImage(#imageLiteral(resourceName: "Layout 3.png"), for: .normal)
-        buttonPicture[1].isHidden = true
-        buttonPicture[3].isHidden = false
-    }
-    @IBAction func buttonLayOut2(_ sender: UIButton) {
-        animateButtonLayOut(sender);
-        buttonLayout[1].setImage(#imageLiteral(resourceName: "select2.png"), for: .normal)
-        buttonLayout[2].setImage(#imageLiteral(resourceName: "Layout 1.png"), for: .normal)
-        buttonLayout[0].setImage(#imageLiteral(resourceName: "Layout 3.png"), for: .normal)
-        buttonPicture[3].isHidden = true
-        buttonPicture[1].isHidden = false
-    }
-    @IBAction func buttonLayout3(_ sender: UIButton) {
-        animateButtonLayOut(sender);
-        buttonLayout[0].setImage(#imageLiteral(resourceName: "select3.png"), for: .normal)
-        buttonLayout[1].setImage(#imageLiteral(resourceName: "Layout 2.png"), for: .normal)
-        buttonLayout[2].setImage(#imageLiteral(resourceName: "Layout 1.png"), for: .normal)
-        buttonPicture[1].isHidden = false
-        buttonPicture[3].isHidden = false
+        animateButtonLayOut(sender)
+        changeImageButtonLayoutIfSelected(sender)
+        
     }
     
     // On partage les images
     func sharePhoto(){
-        imageButton = currentButton?.currentImage
-        let activityViewController = UIActivityViewController(activityItems:[imageButton!], applicationActivities: nil)
-        self.present(activityViewController, animated: true, completion: nil)
-        
-        // Permet de faire l'animation inverse à la fermeture de la fenêtre de partage
-        activityViewController.completionWithItemsHandler = {  activity, success, items, error in
-            UIView.animate(withDuration: 0.5, animations: {
-                self.squarrePictureLayout.transform = .identity
-                self.squarrePictureLayout.alpha = 1
-            }, completion: nil)
+        if let image = transformImage(view: squarrePictureLayout) {
+            let share = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+            self.present(share, animated: true, completion: nil)
+            // Permet de faire l'animation inverse à la fermeture de la fenêtre de partage
+            share.completionWithItemsHandler = {  activity, success, items, error in
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.squarrePictureLayout.transform = .identity
+                    self.squarrePictureLayout.alpha = 1
+                }, completion: nil)
+            }
         }
     }
     
@@ -148,6 +159,18 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             }
         }
         self.sharePhoto()
+    }
+    
+    func transformImage(view: UIView) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0)
+        defer { UIGraphicsEndImageContext() }
+        if let context = UIGraphicsGetCurrentContext() {
+            view.layer.render(in: context)
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            
+            return image
+        }
+        return nil
     }
 }
 

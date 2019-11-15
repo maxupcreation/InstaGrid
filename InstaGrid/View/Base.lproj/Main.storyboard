@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="landscape" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -20,17 +20,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="InstaGrid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZA-kk-Dqb" userLabel="SquarePictureLayOut 3">
-                                <rect key="frame" x="291" y="50" width="314" height="314"/>
+                                <rect key="frame" x="20" y="261" width="374" height="374"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="vdX-Qq-mbm">
-                                        <rect key="frame" x="7" y="7" width="300" height="144.33333333333334"/>
+                                        <rect key="frame" x="7" y="7" width="360" height="173.33333333333334"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="770" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCG-VP-U3i" userLabel="buttonPicture1">
-                                                <rect key="frame" x="0.0" y="0.0" width="145.66666666666666" height="144.33333333333334"/>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalCompressionResistancePriority="770" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCG-VP-U3i" userLabel="buttonPicture1">
+                                                <rect key="frame" x="0.0" y="0.0" width="175.66666666666666" height="173.33333333333334"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="Plus"/>
                                                 <userDefinedRuntimeAttributes>
@@ -42,8 +42,8 @@
                                                     <action selector="didTapAddPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Be-cA-7gS"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rcg-Nz-raY" userLabel="buttonPicture2">
-                                                <rect key="frame" x="154.66666666666669" y="0.0" width="145.33333333333331" height="144.33333333333334"/>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rcg-Nz-raY" userLabel="buttonPicture2">
+                                                <rect key="frame" x="184.66666666666663" y="0.0" width="175.33333333333337" height="173.33333333333334"/>
                                                 <color key="backgroundColor" red="0.93791640229999995" green="0.92521065879999997" blue="0.90431679320000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="Plus"/>
                                                 <userDefinedRuntimeAttributes>
@@ -61,10 +61,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Qzh-wX-Uer">
-                                        <rect key="frame" x="7" y="160.33333333333337" width="300" height="146.66666666666663"/>
+                                        <rect key="frame" x="7" y="191" width="360" height="176"/>
                                         <subviews>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rri-bb-DGU" userLabel="buttonPicture3">
-                                                <rect key="frame" x="0.0" y="0.0" width="145.66666666666666" height="146.66666666666666"/>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rri-bb-DGU" userLabel="buttonPicture3">
+                                                <rect key="frame" x="0.0" y="0.0" width="175.66666666666666" height="176"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <state key="normal" image="Plus"/>
                                                 <userDefinedRuntimeAttributes>
@@ -76,8 +76,8 @@
                                                     <action selector="didTapAddPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ciS-5o-vMA"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="237" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FM1-0N-f7W" userLabel="buttonPicture4">
-                                                <rect key="frame" x="154.66666666666669" y="0.0" width="145.33333333333331" height="146.66666666666666"/>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="237" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FM1-0N-f7W" userLabel="buttonPicture4">
+                                                <rect key="frame" x="184.66666666666663" y="0.0" width="175.33333333333337" height="176"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <state key="normal" image="Plus"/>
                                                 <userDefinedRuntimeAttributes>
@@ -112,16 +112,16 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qA4-0E-c9x">
-                                <rect key="frame" x="390.66666666666669" y="5" width="114.66666666666669" height="37.666666666666664"/>
+                                <rect key="frame" x="149.66666666666666" y="57" width="114.66666666666666" height="37.666666666666657"/>
                                 <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="29"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hEW-in-kRj" userLabel="ST-SwipeAndArrow">
-                                <rect key="frame" x="64.000000000000014" y="171.33333333333334" width="137.33333333333337" height="71.333333333333343"/>
+                                <rect key="frame" x="90" y="114.66666666666669" width="234" height="122"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="YHI-C0-f7u">
-                                        <rect key="frame" x="53.666666666666671" y="0.0" width="30" height="34.333333333333336"/>
+                                        <rect key="frame" x="102" y="0.0" width="30" height="34.666666666666664"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="YHI-C0-f7u" secondAttribute="height" multiplier="13:15" id="I71-An-dOi"/>
                                             <constraint firstAttribute="width" constant="30" id="STc-Jp-OXC"/>
@@ -129,7 +129,7 @@
                                         <variation key="heightClass=compact" image="Arrow Left"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to share" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZG-Gj-sxb">
-                                        <rect key="frame" x="2.3333333333333286" y="42.333333333333314" width="132.66666666666669" height="29"/>
+                                        <rect key="frame" x="48" y="42.666666666666679" width="138" height="79.333333333333314"/>
                                         <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="27"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -143,10 +143,10 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="udN-Zh-gUy">
-                                <rect key="frame" x="727" y="50" width="95" height="314"/>
+                                <rect key="frame" x="28" y="673" width="358" height="108.33333333333337"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" adjustsImageSizeForAccessibilityContentSizeCategory="YES" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vz-6f-iP8">
-                                        <rect key="frame" x="0.0" y="0.0" width="95" height="96.666666666666671"/>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" adjustsImageSizeForAccessibilityContentSizeCategory="YES" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vz-6f-iP8">
+                                        <rect key="frame" x="0.0" y="0.0" width="111.33333333333333" height="108.33333333333333"/>
                                         <state key="normal" backgroundImage="Layout 1"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -157,21 +157,21 @@
                                             <action selector="buttonLayOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vbv-ug-D8N"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" adjustsImageSizeForAccessibilityContentSizeCategory="YES" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pow-QQ-Q8c">
-                                        <rect key="frame" x="0.0" y="108.66666666666666" width="95" height="96.666666666666657"/>
-                                        <state key="normal" image="Layout 2"/>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" adjustsImageSizeForAccessibilityContentSizeCategory="YES" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pow-QQ-Q8c">
+                                        <rect key="frame" x="123.33333333333334" y="0.0" width="111.33333333333334" height="108.33333333333333"/>
+                                        <state key="normal" backgroundImage="Layout 2"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonLayOut2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Ye-yk-0Wd"/>
+                                            <action selector="buttonLayOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YwN-N9-Zny"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" adjustsImageSizeForAccessibilityContentSizeCategory="YES" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQb-DG-M2j">
-                                        <rect key="frame" x="0.0" y="217.33333333333329" width="95" height="96.666666666666657"/>
-                                        <state key="normal" image="select3">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" adjustsImageSizeForAccessibilityContentSizeCategory="YES" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQb-DG-M2j">
+                                        <rect key="frame" x="246.66666666666671" y="0.0" width="111.33333333333334" height="108.33333333333333"/>
+                                        <state key="normal" image="Selected" backgroundImage="Layout 3">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -180,7 +180,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonLayout3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gwI-wt-tBi"/>
+                                            <action selector="buttonLayOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QXo-wk-o7u"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -239,11 +239,11 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="avi-aX-4u9"/>
-                                <exclude reference="SJx-jY-5cv"/>
                                 <exclude reference="VGw-TF-Gj2"/>
                                 <exclude reference="vZs-gg-o1M"/>
                                 <exclude reference="cka-jx-8nT"/>
                                 <exclude reference="o9d-lr-CVc"/>
+                                <exclude reference="SJx-jY-5cv"/>
                                 <exclude reference="8vh-yb-K8Y"/>
                                 <exclude reference="GsQ-Mx-lZQ"/>
                                 <exclude reference="qVh-Kr-vDy"/>
@@ -252,8 +252,6 @@
                         <variation key="heightClass=compact">
                             <mask key="constraints">
                                 <include reference="avi-aX-4u9"/>
-                                <exclude reference="RhG-fu-PzY"/>
-                                <include reference="SJx-jY-5cv"/>
                                 <exclude reference="CQz-dz-PaA"/>
                                 <include reference="VGw-TF-Gj2"/>
                                 <exclude reference="rfc-v4-778"/>
@@ -263,6 +261,8 @@
                                 <exclude reference="abV-bq-LRv"/>
                                 <include reference="cka-jx-8nT"/>
                                 <include reference="o9d-lr-CVc"/>
+                                <exclude reference="RhG-fu-PzY"/>
+                                <include reference="SJx-jY-5cv"/>
                                 <exclude reference="8vh-yb-K8Y"/>
                                 <include reference="GsQ-Mx-lZQ"/>
                                 <exclude reference="bXN-uh-IAA"/>
@@ -280,13 +280,13 @@
                     <connections>
                         <outlet property="squarrePictureLayout" destination="YZA-kk-Dqb" id="Dqc-AD-noB"/>
                         <outlet property="txtSwipeToShare" destination="sZG-Gj-sxb" id="STW-EV-zMs"/>
-                        <outletCollection property="buttonLayout" destination="nQb-DG-M2j" collectionClass="NSMutableArray" id="VkX-FN-bva"/>
-                        <outletCollection property="buttonLayout" destination="Pow-QQ-Q8c" collectionClass="NSMutableArray" id="Yiq-yg-p68"/>
-                        <outletCollection property="buttonLayout" destination="9vz-6f-iP8" collectionClass="NSMutableArray" id="OI5-Et-0wh"/>
                         <outletCollection property="buttonPicture" destination="lCG-VP-U3i" collectionClass="NSMutableArray" id="HyN-7R-z0E"/>
                         <outletCollection property="buttonPicture" destination="Rcg-Nz-raY" collectionClass="NSMutableArray" id="S3i-oY-CeZ"/>
                         <outletCollection property="buttonPicture" destination="rri-bb-DGU" collectionClass="NSMutableArray" id="WOd-Pw-rcj"/>
                         <outletCollection property="buttonPicture" destination="FM1-0N-f7W" collectionClass="NSMutableArray" id="ihK-IS-1VB"/>
+                        <outletCollection property="buttonLayout" destination="9vz-6f-iP8" collectionClass="NSMutableArray" id="2OZ-fV-UEm"/>
+                        <outletCollection property="buttonLayout" destination="Pow-QQ-Q8c" collectionClass="NSMutableArray" id="4W4-Ud-qna"/>
+                        <outletCollection property="buttonLayout" destination="nQb-DG-M2j" collectionClass="NSMutableArray" id="jm6-Pr-PdT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -296,7 +296,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="131.25" y="97.183098591549296"/>
+            <point key="canvasLocation" x="130.43478260869566" y="97.098214285714278"/>
         </scene>
     </scenes>
     <resources>
@@ -304,7 +304,8 @@
         <image name="Arrow Up" width="13.333333015441895" height="9.6666669845581055"/>
         <image name="Layout 1" width="80" height="80"/>
         <image name="Layout 2" width="80" height="80"/>
+        <image name="Layout 3" width="80" height="80"/>
         <image name="Plus" width="40" height="40"/>
-        <image name="select3" width="80" height="80"/>
+        <image name="Selected" width="80" height="80"/>
     </resources>
 </document>
