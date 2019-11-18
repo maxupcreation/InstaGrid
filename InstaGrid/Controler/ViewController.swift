@@ -37,7 +37,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     
-    ///Change l'image des buttons avec l'image choisi
+    ///Change l'image des buttons avec l'image choisi et l'ajoute à photo array.
     func imagePickerController(_ picker: UIImagePickerController,  didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
         
         picker.dismiss(animated: true, completion: nil)
@@ -49,17 +49,25 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let topSwipeGesture = UISwipeGestureRecognizer(target: self, action:#selector(SwipeAction(_:)))
+    /// initialisation de la Gesture pour viewDidload
+    func initalisationSwipeGesture() {
+        let topSwipeGesture = UISwipeGestureRecognizer(target: self, action:#selector(SwipeActionUp(_:)))
         topSwipeGesture.direction = .up
         self.view.addGestureRecognizer(topSwipeGesture)
         
-        let leftSwipeGesture = UISwipeGestureRecognizer(target: self, action:#selector(SwipeAction(_:)))
+        
+        let leftSwipeGesture = UISwipeGestureRecognizer(target: self, action:#selector(SwipeActionLeft(_:)))
         leftSwipeGesture.direction = .left
         self.view.addGestureRecognizer(leftSwipeGesture)
-    }
+}
     
+        override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        initalisationSwipeGesture()
+        
+        
+    }
     
     /// Petite animation (fondu) des buttons Layout lorsqu'on clique dessus
     func animateButtonLayOut(_ sender : UIButton) {
@@ -70,7 +78,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
     }
     
-    
+    /// changement en fonction du button layout selectionné
     func changeImageButtonLayoutIfSelected (_ sender : UIButton) {
         let tagButtonLayout = currentButtonLayOut?.tag
         switch tagButtonLayout {
@@ -84,8 +92,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         buttonLayout[2].setImage(nil, for: .normal)
         buttonPicture[0].isHidden = false
         buttonPicture[3].isHidden = true
-            
-            
         case 3: buttonLayout[2].setImage(#imageLiteral(resourceName: "Selected.png") , for: .normal)
         buttonLayout[0].setImage(nil, for: .normal)
         buttonLayout[1].setImage(nil, for: .normal)
@@ -97,16 +103,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
     }
     
-    
-    
-    // Les 3 buttons Layout, on change l'image en fonction
+    ///Action lorsqu'on clique sur un button Layout
     @IBAction func buttonLayOut(_ sender: UIButton) {
         animateButtonLayOut(sender)
         changeImageButtonLayoutIfSelected(sender)
         
     }
     
-    // On partage les images
+    /// On partage les images transformées.
     func sharePhoto(){
         if let image = transformImage(view: squarrePictureLayout) {
             let share = UIActivityViewController(activityItems: [image], applicationActivities: nil)
@@ -129,21 +133,43 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         return false
     }
     
-    @IBAction func SwipeAction(_ sender: UISwipeGestureRecognizer) {
-        if controlImageButton() == true  {
-            animateSwipeAndShare()
-        } else {
-            UIView.animate(withDuration: 0.2){
-                self.txtSwipeToShare.text = "Vous n'avez pas choisi \n d'image à partager ! "
-                self.txtSwipeToShare.transform =
-                    CGAffineTransform(translationX: 0 , y:-15)
-            }
-            UIView.animate(withDuration: 0.4){
-                self.txtSwipeToShare.transform = .identity
+    /// Si l'orientation est en mode portrait on execute la suite : Si il y a au moins une image dans le tableau, on partage,  sinon on affiche un message d'erreur avec une petite animation.
+    @IBAction func SwipeActionUp(_ sender: UISwipeGestureRecognizer) {
+        if UIDevice.current.orientation.isPortrait {
+            if controlImageButton() == true {
+                animateSwipeAndShare()
+            } else {
+                UIView.animate(withDuration: 0.2){
+                    self.txtSwipeToShare.text = "Vous n'avez pas choisi \n d'image à partager ! "
+                    self.txtSwipeToShare.transform =
+                        CGAffineTransform(translationX: 0 , y:-15)
+                }
+                UIView.animate(withDuration: 0.4){
+                    self.txtSwipeToShare.transform = .identity
+                }
             }
         }
     }
-    /// Animation lors du swipe
+    
+    /// Si l'orientation est en mode paysage on execute la suite : Si il y a au moins une image dans le tableau, on partage, sinon on affiche un message d'erreur avec une petite animation.
+    @IBAction func SwipeActionLeft(_ sender: UISwipeGestureRecognizer) {
+        if UIDevice.current.orientation.isLandscape {
+            if controlImageButton() == true  {
+                animateSwipeAndShare()
+            } else {
+                UIView.animate(withDuration: 0.2){
+                    self.txtSwipeToShare.text = "Vous n'avez pas choisi \n d'image à partager ! "
+                    self.txtSwipeToShare.transform =
+                        CGAffineTransform(translationX:-15, y:0)
+                }
+                UIView.animate(withDuration: 0.4){
+                    self.txtSwipeToShare.transform = .identity
+                }
+            }
+        }
+        
+    }
+    /// Animation lors du swipe et partage.
     func animateSwipeAndShare () {
         if UIDevice.current.orientation.isPortrait {
             UIView.animate(withDuration: 1) {
@@ -161,6 +187,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         self.sharePhoto()
     }
     
+    ///Transformation de la vue en image
     func transformImage(view: UIView) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0)
         defer { UIGraphicsEndImageContext() }
