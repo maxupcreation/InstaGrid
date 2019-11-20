@@ -24,86 +24,85 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZA-kk-Dqb" userLabel="SquarePictureLayOut 3">
-                                <rect key="frame" x="291" y="50" width="314" height="314"/>
+                                <rect key="frame" x="291.66666666666663" y="50" width="312.66666666666663" height="314"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="vdX-Qq-mbm">
-                                        <rect key="frame" x="7" y="7" width="300" height="144.33333333333334"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7hZ-61-5I3">
+                                        <rect key="frame" x="8" y="8" width="296.66666666666669" height="298"/>
                                         <subviews>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalCompressionResistancePriority="770" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCG-VP-U3i" userLabel="buttonPicture1">
-                                                <rect key="frame" x="0.0" y="0.0" width="145.66666666666666" height="144.33333333333334"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" image="Plus"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="didTapAddPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Be-cA-7gS"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rcg-Nz-raY" userLabel="buttonPicture2">
-                                                <rect key="frame" x="154.66666666666669" y="0.0" width="145.33333333333331" height="144.33333333333334"/>
-                                                <color key="backgroundColor" red="0.93791640229999995" green="0.92521065879999997" blue="0.90431679320000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" image="Plus"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="didTapAddPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HlU-Qc-p5f"/>
-                                                </connections>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="vdX-Qq-mbm">
+                                                <rect key="frame" x="0.0" y="0.0" width="296.66666666666669" height="145"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalCompressionResistancePriority="770" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCG-VP-U3i" userLabel="buttonPicture1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="144" height="145"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="Plus"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="didTapAddPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Be-cA-7gS"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rcg-Nz-raY" userLabel="buttonPicture2">
+                                                        <rect key="frame" x="153" y="0.0" width="143.66666666666663" height="145"/>
+                                                        <color key="backgroundColor" red="0.93791640229999995" green="0.92521065879999997" blue="0.90431679320000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" image="Plus"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="didTapAddPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HlU-Qc-p5f"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Qzh-wX-Uer">
+                                                <rect key="frame" x="0.0" y="153" width="296.66666666666669" height="145"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rri-bb-DGU" userLabel="buttonPicture3">
+                                                        <rect key="frame" x="0.0" y="0.0" width="144" height="145"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                        <state key="normal" image="Plus"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="didTapAddPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ciS-5o-vMA"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="237" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FM1-0N-f7W" userLabel="buttonPicture4">
+                                                        <rect key="frame" x="153" y="0.0" width="143.66666666666663" height="145"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                        <state key="normal" image="Plus"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="didTapAddPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l2R-yx-ENV"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Qzh-wX-Uer" secondAttribute="height" multiplier="264:129" id="bwU-3A-ycO"/>
+                                                </constraints>
+                                            </stackView>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="vdX-Qq-mbm" secondAttribute="height" multiplier="264:127" id="Onl-WO-EgZ"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Qzh-wX-Uer">
-                                        <rect key="frame" x="7" y="160.33333333333337" width="300" height="146.66666666666663"/>
-                                        <subviews>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rri-bb-DGU" userLabel="buttonPicture3">
-                                                <rect key="frame" x="0.0" y="0.0" width="145.66666666666666" height="146.66666666666666"/>
-                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                                <state key="normal" image="Plus"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="didTapAddPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ciS-5o-vMA"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="237" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FM1-0N-f7W" userLabel="buttonPicture4">
-                                                <rect key="frame" x="154.66666666666669" y="0.0" width="145.33333333333331" height="146.66666666666666"/>
-                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                                <state key="normal" image="Plus"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="didTapAddPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l2R-yx-ENV"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="Qzh-wX-Uer" secondAttribute="height" multiplier="264:129" id="bwU-3A-ycO"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.2220019822" green="0.49567880669999997" blue="0.61970846400000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="YZA-kk-Dqb" secondAttribute="height" multiplier="1:1" id="08A-Y5-AxV"/>
-                                    <constraint firstAttribute="bottom" secondItem="Qzh-wX-Uer" secondAttribute="bottom" constant="7" id="47T-9e-BUR"/>
-                                    <constraint firstItem="Qzh-wX-Uer" firstAttribute="leading" secondItem="YZA-kk-Dqb" secondAttribute="leading" constant="7" id="IHQ-ST-txF"/>
-                                    <constraint firstAttribute="trailing" secondItem="vdX-Qq-mbm" secondAttribute="trailing" constant="7" id="bhy-k1-CyI"/>
-                                    <constraint firstAttribute="trailing" secondItem="Qzh-wX-Uer" secondAttribute="trailing" constant="7" id="q8I-cR-obq"/>
-                                    <constraint firstItem="vdX-Qq-mbm" firstAttribute="top" secondItem="YZA-kk-Dqb" secondAttribute="top" constant="7" id="z9e-6R-hCD"/>
-                                    <constraint firstItem="vdX-Qq-mbm" firstAttribute="leading" secondItem="YZA-kk-Dqb" secondAttribute="leading" constant="7" id="zSF-HF-FaL"/>
+                                    <constraint firstItem="7hZ-61-5I3" firstAttribute="leading" secondItem="YZA-kk-Dqb" secondAttribute="leading" constant="8" id="2i6-OL-z3p"/>
+                                    <constraint firstAttribute="trailing" secondItem="7hZ-61-5I3" secondAttribute="trailing" constant="8" id="70y-Iw-i25"/>
+                                    <constraint firstAttribute="bottom" secondItem="7hZ-61-5I3" secondAttribute="bottom" constant="8" id="PnH-pA-DOr"/>
+                                    <constraint firstItem="7hZ-61-5I3" firstAttribute="top" secondItem="YZA-kk-Dqb" secondAttribute="top" constant="8" id="yiv-QS-Af9"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -241,9 +240,9 @@
                                 <exclude reference="avi-aX-4u9"/>
                                 <exclude reference="VGw-TF-Gj2"/>
                                 <exclude reference="vZs-gg-o1M"/>
-                                <exclude reference="SJx-jY-5cv"/>
                                 <exclude reference="cka-jx-8nT"/>
                                 <exclude reference="o9d-lr-CVc"/>
+                                <exclude reference="SJx-jY-5cv"/>
                                 <exclude reference="8vh-yb-K8Y"/>
                                 <exclude reference="GsQ-Mx-lZQ"/>
                                 <exclude reference="qVh-Kr-vDy"/>
@@ -256,13 +255,13 @@
                                 <include reference="VGw-TF-Gj2"/>
                                 <exclude reference="rfc-v4-778"/>
                                 <include reference="vZs-gg-o1M"/>
-                                <exclude reference="RhG-fu-PzY"/>
-                                <include reference="SJx-jY-5cv"/>
                                 <include reference="VIq-Zy-viN"/>
                                 <exclude reference="XCL-fW-cj4"/>
                                 <exclude reference="abV-bq-LRv"/>
                                 <include reference="cka-jx-8nT"/>
                                 <include reference="o9d-lr-CVc"/>
+                                <exclude reference="RhG-fu-PzY"/>
+                                <include reference="SJx-jY-5cv"/>
                                 <exclude reference="8vh-yb-K8Y"/>
                                 <include reference="GsQ-Mx-lZQ"/>
                                 <exclude reference="bXN-uh-IAA"/>
@@ -280,26 +279,16 @@
                     <connections>
                         <outlet property="squarrePictureLayout" destination="YZA-kk-Dqb" id="Dqc-AD-noB"/>
                         <outlet property="txtSwipeToShare" destination="sZG-Gj-sxb" id="STW-EV-zMs"/>
-                        <outletCollection property="buttonPicture" destination="lCG-VP-U3i" collectionClass="NSMutableArray" id="HyN-7R-z0E"/>
-                        <outletCollection property="buttonPicture" destination="Rcg-Nz-raY" collectionClass="NSMutableArray" id="S3i-oY-CeZ"/>
-                        <outletCollection property="buttonPicture" destination="rri-bb-DGU" collectionClass="NSMutableArray" id="WOd-Pw-rcj"/>
-                        <outletCollection property="buttonPicture" destination="FM1-0N-f7W" collectionClass="NSMutableArray" id="ihK-IS-1VB"/>
                         <outletCollection property="buttonLayout" destination="9vz-6f-iP8" collectionClass="NSMutableArray" id="2OZ-fV-UEm"/>
                         <outletCollection property="buttonLayout" destination="Pow-QQ-Q8c" collectionClass="NSMutableArray" id="4W4-Ud-qna"/>
                         <outletCollection property="buttonLayout" destination="nQb-DG-M2j" collectionClass="NSMutableArray" id="jm6-Pr-PdT"/>
+                        <outletCollection property="buttonPicture" destination="lCG-VP-U3i" collectionClass="NSMutableArray" id="HyN-7R-z0E"/>
+                        <outletCollection property="buttonPicture" destination="Rcg-Nz-raY" collectionClass="NSMutableArray" id="S3i-oY-CeZ"/>
+                        <outletCollection property="buttonPicture" destination="FM1-0N-f7W" collectionClass="NSMutableArray" id="ihK-IS-1VB"/>
+                        <outletCollection property="buttonPicture" destination="rri-bb-DGU" collectionClass="NSMutableArray" id="WOd-Pw-rcj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="fYS-yQ-tJa" userLabel="Swipe Gesture up">
-                    <connections>
-                        <action selector="SwipeActionUp:" destination="BYZ-38-t0r" id="JVR-Ie-FZG"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="i1b-Cv-69p" userLabel="Swipe Gesture left">
-                    <connections>
-                        <action selector="SwipeActionLeft:" destination="BYZ-38-t0r" id="1gu-b1-bz6"/>
-                    </connections>
-                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="130.43478260869566" y="97.098214285714278"/>
         </scene>

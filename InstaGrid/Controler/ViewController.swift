@@ -36,7 +36,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
     }
     
-    
     ///Change l'image des buttons avec l'image choisi et l'ajoute à photo array.
     func imagePickerController(_ picker: UIImagePickerController,  didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
         
@@ -59,13 +58,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         let leftSwipeGesture = UISwipeGestureRecognizer(target: self, action:#selector(SwipeActionLeft(_:)))
         leftSwipeGesture.direction = .left
         self.view.addGestureRecognizer(leftSwipeGesture)
-}
+    }
     
-        override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         initalisationSwipeGesture()
-        
         
     }
     
@@ -83,20 +81,20 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         let tagButtonLayout = currentButtonLayOut?.tag
         switch tagButtonLayout {
         case 1: buttonLayout[0].setImage(#imageLiteral(resourceName: "Selected.png") , for: .normal)
-        buttonLayout[2].setImage(nil, for: .normal)
-        buttonLayout[1].setImage(nil, for: .normal)
-        buttonPicture[0].isHidden = true
-        buttonPicture[3].isHidden = false
+                buttonLayout[2].setImage(nil, for: .normal)
+                buttonLayout[1].setImage(nil, for: .normal)
+                buttonPicture[0].isHidden = true
+                buttonPicture[3].isHidden = false
         case 2: buttonLayout[1].setImage(#imageLiteral(resourceName: "Selected.png") , for: .normal)
-        buttonLayout[0].setImage(nil, for: .normal)
-        buttonLayout[2].setImage(nil, for: .normal)
-        buttonPicture[0].isHidden = false
-        buttonPicture[3].isHidden = true
+                buttonLayout[0].setImage(nil, for: .normal)
+                buttonLayout[2].setImage(nil, for: .normal)
+                buttonPicture[0].isHidden = false
+                buttonPicture[3].isHidden = true
         case 3: buttonLayout[2].setImage(#imageLiteral(resourceName: "Selected.png") , for: .normal)
-        buttonLayout[0].setImage(nil, for: .normal)
-        buttonLayout[1].setImage(nil, for: .normal)
-        buttonPicture[0].isHidden = false
-        buttonPicture[3].isHidden = false
+                buttonLayout[0].setImage(nil, for: .normal)
+                buttonLayout[1].setImage(nil, for: .normal)
+                buttonPicture[0].isHidden = false
+                buttonPicture[3].isHidden = false
             
         default : break
             
