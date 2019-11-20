@@ -15,6 +15,23 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     var imageButton : UIImage?
     var photosArray = [UIImage]()
     
+    var statusbarOrientation : UIInterfaceOrientation? {
+        get {
+            if #available(iOS 13,*) {
+                guard let orientation = UIApplication.shared.windows.first?.windowScene?.interfaceOrientation else {
+                    #if DEBUG
+                    fatalError("error")
+                    #else
+                    return nil
+                    #endif
+                }
+                return orientation
+            }
+            return nil
+        }
+        
+    }
+    
     @IBOutlet weak var txtSwipeToShare: UILabel!
     @IBOutlet var buttonPicture: [UIButton]!
     @IBOutlet weak var squarrePictureLayout: UIView!
@@ -81,20 +98,20 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         let tagButtonLayout = currentButtonLayOut?.tag
         switch tagButtonLayout {
         case 1: buttonLayout[0].setImage(#imageLiteral(resourceName: "Selected.png") , for: .normal)
-                buttonLayout[2].setImage(nil, for: .normal)
-                buttonLayout[1].setImage(nil, for: .normal)
-                buttonPicture[0].isHidden = true
-                buttonPicture[3].isHidden = false
+        buttonLayout[2].setImage(nil, for: .normal)
+        buttonLayout[1].setImage(nil, for: .normal)
+        buttonPicture[0].isHidden = true
+        buttonPicture[3].isHidden = false
         case 2: buttonLayout[1].setImage(#imageLiteral(resourceName: "Selected.png") , for: .normal)
-                buttonLayout[0].setImage(nil, for: .normal)
-                buttonLayout[2].setImage(nil, for: .normal)
-                buttonPicture[0].isHidden = false
-                buttonPicture[3].isHidden = true
+        buttonLayout[0].setImage(nil, for: .normal)
+        buttonLayout[2].setImage(nil, for: .normal)
+        buttonPicture[0].isHidden = false
+        buttonPicture[3].isHidden = true
         case 3: buttonLayout[2].setImage(#imageLiteral(resourceName: "Selected.png") , for: .normal)
-                buttonLayout[0].setImage(nil, for: .normal)
-                buttonLayout[1].setImage(nil, for: .normal)
-                buttonPicture[0].isHidden = false
-                buttonPicture[3].isHidden = false
+        buttonLayout[0].setImage(nil, for: .normal)
+        buttonLayout[1].setImage(nil, for: .normal)
+        buttonPicture[0].isHidden = false
+        buttonPicture[3].isHidden = false
             
         default : break
             
@@ -109,19 +126,18 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     /// On partage les images transformées.
-    func sharePhoto(){
-        if let image = transformImage(view: squarrePictureLayout) {
-            let share = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-            self.present(share, animated: true, completion: nil)
-            // Permet de faire l'animation inverse à la fermeture de la fenêtre de partage
-            share.completionWithItemsHandler = {  activity, success, items, error in
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.squarrePictureLayout.transform = .identity
-                    self.squarrePictureLayout.alpha = 1
-                }, completion: nil)
-            }
+    func sharePhoto(image : UIImage){
+        let share = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        self.present(share, animated: true, completion: nil)
+        // Permet de faire l'animation inverse à la fermeture de la fenêtre de partage
+        share.completionWithItemsHandler = {  activity, success, items, error in
+            UIView.animate(withDuration: 0.5, animations: {
+                self.squarrePictureLayout.transform = .identity
+                self.squarrePictureLayout.alpha = 1
+            }, completion: nil)
         }
     }
+    
     
     /// On controle s'il y a au moins une image dans le tableau pour partager
     func controlImageButton () -> Bool {
@@ -133,7 +149,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     /// Si l'orientation est en mode portrait on execute la suite : Si il y a au moins une image dans le tableau, on partage,  sinon on affiche un message d'erreur avec une petite animation.
     @IBAction func SwipeActionUp(_ sender: UISwipeGestureRecognizer) {
-        if UIDevice.current.orientation.isPortrait {
+        guard let portrait = statusbarOrientation?.isPortrait else {return}
+        if portrait {
             if controlImageButton() == true {
                 animateSwipeAndShare()
             } else {
@@ -151,11 +168,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     /// Si l'orientation est en mode paysage on execute la suite : Si il y a au moins une image dans le tableau, on partage, sinon on affiche un message d'erreur avec une petite animation.
     @IBAction func SwipeActionLeft(_ sender: UISwipeGestureRecognizer) {
-        if UIDevice.current.orientation.isLandscape {
+        guard let landscape = statusbarOrientation?.isLandscape else {return}
+        if landscape {
             if controlImageButton() == true  {
                 animateSwipeAndShare()
             } else {
-                UIView.animate(withDuration: 0.2){
+                UIView.animate(withDuration: 0.2){ 
                     self.txtSwipeToShare.text = "Vous n'avez pas choisi \n d'image à partager ! "
                     self.txtSwipeToShare.transform =
                         CGAffineTransform(translationX:-15, y:0)
@@ -169,7 +187,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     /// Animation lors du swipe et partage.
     func animateSwipeAndShare () {
-        if UIDevice.current.orientation.isPortrait {
+        guard let image = squarrePictureLayout?.asImage() else {return}
+        guard let portrait = statusbarOrientation?.isPortrait else {return}
+        if portrait {
             UIView.animate(withDuration: 1) {
                 
                 self.squarrePictureLayout.transform = CGAffineTransform(translationX: 0, y: -200)
@@ -182,23 +202,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                 
             }
         }
-        self.sharePhoto()
-    }
-    
-    ///Transformation de la vue en image
-    func transformImage(view: UIView) -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0)
-        defer { UIGraphicsEndImageContext() }
-        if let context = UIGraphicsGetCurrentContext() {
-            view.layer.render(in: context)
-            let image = UIGraphicsGetImageFromCurrentImageContext()
-            
-            return image
-        }
-        return nil
+        self.sharePhoto(image : image)
     }
 }
-
-
-
-
+///Transformation de la vue en image
+extension UIView {
+    func asImage() -> UIImage {
+        let renderer = UIGraphicsImageRenderer(bounds:bounds)
+        return renderer.image { rendererContext in layer.render(in: rendererContext.cgContext)}
+    }
+    
+}
