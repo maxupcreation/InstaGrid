@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="landscape" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,20 +21,45 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="InstaGrid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hEW-in-kRj" userLabel="ST-SwipeAndArrow">
+                                <rect key="frame" x="96.5" y="67" width="127" height="66"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="YHI-C0-f7u">
+                                        <rect key="frame" x="48.5" y="0.0" width="30" height="34.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="YHI-C0-f7u" secondAttribute="height" multiplier="13:15" id="I71-An-dOi"/>
+                                            <constraint firstAttribute="width" constant="30" id="STc-Jp-OXC"/>
+                                        </constraints>
+                                        <variation key="heightClass=compact" image="Arrow Left"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to share" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZG-Gj-sxb">
+                                        <rect key="frame" x="10" y="42.5" width="107.5" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="21"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact">
+                                            <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="18"/>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hEW-in-kRj" secondAttribute="height" multiplier="23:12" id="YVc-bm-fQU"/>
+                                </constraints>
+                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZA-kk-Dqb" userLabel="SquarePictureLayOut 3">
-                                <rect key="frame" x="291.66666666666663" y="50" width="312.66666666666663" height="314"/>
+                                <rect key="frame" x="20" y="143" width="280" height="282"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7hZ-61-5I3">
-                                        <rect key="frame" x="8" y="8" width="296.66666666666669" height="298"/>
+                                        <rect key="frame" x="8" y="8" width="264" height="266"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="vdX-Qq-mbm">
-                                                <rect key="frame" x="0.0" y="0.0" width="296.66666666666669" height="145"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="264" height="129"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalCompressionResistancePriority="770" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCG-VP-U3i" userLabel="buttonPicture1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="144" height="145"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="127.5" height="129"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Plus"/>
                                                         <userDefinedRuntimeAttributes>
@@ -46,8 +72,8 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rcg-Nz-raY" userLabel="buttonPicture2">
-                                                        <rect key="frame" x="153" y="0.0" width="143.66666666666663" height="145"/>
-                                                        <color key="backgroundColor" red="0.93791640229999995" green="0.92521065879999997" blue="0.90431679320000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <rect key="frame" x="136.5" y="0.0" width="127.5" height="129"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Plus"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -61,11 +87,11 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Qzh-wX-Uer">
-                                                <rect key="frame" x="0.0" y="153" width="296.66666666666669" height="145"/>
+                                                <rect key="frame" x="0.0" y="137" width="264" height="129"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rri-bb-DGU" userLabel="buttonPicture3">
-                                                        <rect key="frame" x="0.0" y="0.0" width="144" height="145"/>
-                                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="127.5" height="129"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Plus"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -77,8 +103,8 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="237" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FM1-0N-f7W" userLabel="buttonPicture4">
-                                                        <rect key="frame" x="153" y="0.0" width="143.66666666666663" height="145"/>
-                                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                        <rect key="frame" x="136.5" y="0.0" width="127.5" height="129"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Plus"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -111,41 +137,16 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qA4-0E-c9x">
-                                <rect key="frame" x="390.66666666666669" y="5" width="114.66666666666669" height="37.666666666666664"/>
+                                <rect key="frame" x="103" y="13" width="114.5" height="44"/>
                                 <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="29"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hEW-in-kRj" userLabel="ST-SwipeAndArrow">
-                                <rect key="frame" x="64.000000000000014" y="171.33333333333334" width="137.33333333333337" height="71.333333333333343"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="YHI-C0-f7u">
-                                        <rect key="frame" x="53.666666666666671" y="0.0" width="30" height="34.333333333333336"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="YHI-C0-f7u" secondAttribute="height" multiplier="13:15" id="I71-An-dOi"/>
-                                            <constraint firstAttribute="width" constant="30" id="STc-Jp-OXC"/>
-                                        </constraints>
-                                        <variation key="heightClass=compact" image="Arrow Left"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to share" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZG-Gj-sxb">
-                                        <rect key="frame" x="2.3333333333333286" y="42.333333333333314" width="132.66666666666669" height="29"/>
-                                        <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="27"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="heightClass=compact">
-                                            <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="26"/>
-                                        </variation>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="hEW-in-kRj" secondAttribute="height" multiplier="23:12" id="YVc-bm-fQU"/>
-                                </constraints>
-                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="udN-Zh-gUy">
-                                <rect key="frame" x="727" y="50" width="95" height="314"/>
+                                <rect key="frame" x="28" y="463" width="264" height="80"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" adjustsImageSizeForAccessibilityContentSizeCategory="YES" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vz-6f-iP8">
-                                        <rect key="frame" x="0.0" y="0.0" width="95" height="96.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                         <state key="normal" backgroundImage="Layout 1"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -157,7 +158,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" adjustsImageSizeForAccessibilityContentSizeCategory="YES" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pow-QQ-Q8c">
-                                        <rect key="frame" x="0.0" y="108.66666666666666" width="95" height="96.666666666666657"/>
+                                        <rect key="frame" x="92" y="0.0" width="80" height="80"/>
                                         <state key="normal" backgroundImage="Layout 2"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -169,7 +170,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" adjustsImageSizeForAccessibilityContentSizeCategory="YES" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQb-DG-M2j">
-                                        <rect key="frame" x="0.0" y="217.33333333333329" width="95" height="96.666666666666657"/>
+                                        <rect key="frame" x="184" y="0.0" width="80" height="80"/>
                                         <state key="normal" image="Selected" backgroundImage="Layout 3">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                         </state>
@@ -203,10 +204,11 @@
                         <color key="backgroundColor" red="0.71764705880000002" green="0.84313725490000002" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="YZA-kk-Dqb" firstAttribute="top" secondItem="hEW-in-kRj" secondAttribute="bottom" constant="10" id="7ax-tL-EOY"/>
                             <constraint firstItem="udN-Zh-gUy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="8vh-yb-K8Y">
                                 <variation key="heightClass=compact" constant="50"/>
                             </constraint>
-                            <constraint firstItem="hEW-in-kRj" firstAttribute="top" secondItem="qA4-0E-c9x" secondAttribute="bottom" constant="20" id="CQz-dz-PaA">
+                            <constraint firstItem="hEW-in-kRj" firstAttribute="top" secondItem="qA4-0E-c9x" secondAttribute="bottom" constant="10" id="CQz-dz-PaA">
                                 <variation key="heightClass=compact" constant="70"/>
                             </constraint>
                             <constraint firstItem="udN-Zh-gUy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="GsQ-Mx-lZQ"/>
@@ -238,11 +240,13 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="avi-aX-4u9"/>
+                                <exclude reference="SJx-jY-5cv"/>
+                                <exclude reference="O29-XN-81R"/>
                                 <exclude reference="VGw-TF-Gj2"/>
                                 <exclude reference="vZs-gg-o1M"/>
+                                <exclude reference="7ax-tL-EOY"/>
                                 <exclude reference="cka-jx-8nT"/>
                                 <exclude reference="o9d-lr-CVc"/>
-                                <exclude reference="SJx-jY-5cv"/>
                                 <exclude reference="8vh-yb-K8Y"/>
                                 <exclude reference="GsQ-Mx-lZQ"/>
                                 <exclude reference="qVh-Kr-vDy"/>
@@ -251,6 +255,8 @@
                         <variation key="heightClass=compact">
                             <mask key="constraints">
                                 <include reference="avi-aX-4u9"/>
+                                <exclude reference="RhG-fu-PzY"/>
+                                <include reference="SJx-jY-5cv"/>
                                 <exclude reference="CQz-dz-PaA"/>
                                 <include reference="VGw-TF-Gj2"/>
                                 <exclude reference="rfc-v4-778"/>
@@ -260,8 +266,6 @@
                                 <exclude reference="abV-bq-LRv"/>
                                 <include reference="cka-jx-8nT"/>
                                 <include reference="o9d-lr-CVc"/>
-                                <exclude reference="RhG-fu-PzY"/>
-                                <include reference="SJx-jY-5cv"/>
                                 <exclude reference="8vh-yb-K8Y"/>
                                 <include reference="GsQ-Mx-lZQ"/>
                                 <exclude reference="bXN-uh-IAA"/>
@@ -270,9 +274,20 @@
                                 <exclude reference="rtc-Tr-H8t"/>
                             </mask>
                         </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="7ax-tL-EOY"/>
+                            </mask>
+                        </variation>
                         <variation key="heightClass=compact-widthClass=compact">
                             <mask key="constraints">
                                 <exclude reference="O29-XN-81R"/>
+                                <exclude reference="7ax-tL-EOY"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="7ax-tL-EOY"/>
                             </mask>
                         </variation>
                     </view>
@@ -294,8 +309,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Arrow Left" width="9.6666669845581055" height="13.333333015441895"/>
-        <image name="Arrow Up" width="13.333333015441895" height="9.6666669845581055"/>
+        <image name="Arrow Left" width="9.5" height="13.5"/>
+        <image name="Arrow Up" width="13.5" height="9.5"/>
         <image name="Layout 1" width="80" height="80"/>
         <image name="Layout 2" width="80" height="80"/>
         <image name="Layout 3" width="80" height="80"/>
