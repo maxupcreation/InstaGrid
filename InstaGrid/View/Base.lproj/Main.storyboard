@@ -25,19 +25,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hEW-in-kRj" userLabel="ST-SwipeAndArrow">
-                                <rect key="frame" x="96.5" y="67" width="127" height="66"/>
+                                <rect key="frame" x="20" y="57" width="280" height="76"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="YHI-C0-f7u">
-                                        <rect key="frame" x="48.5" y="0.0" width="30" height="34.5"/>
+                                        <rect key="frame" x="125" y="0.0" width="30" height="48"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="YHI-C0-f7u" secondAttribute="height" multiplier="13:15" id="I71-An-dOi"/>
                                             <constraint firstAttribute="width" constant="30" id="STc-Jp-OXC"/>
                                         </constraints>
                                         <variation key="heightClass=compact" image="Arrow Left"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to share" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZG-Gj-sxb">
-                                        <rect key="frame" x="10" y="42.5" width="107.5" height="23.5"/>
-                                        <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to share" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZG-Gj-sxb">
+                                        <rect key="frame" x="83.5" y="56" width="113.5" height="20"/>
+                                        <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=compact">
@@ -45,9 +44,6 @@
                                         </variation>
                                     </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="hEW-in-kRj" secondAttribute="height" multiplier="23:12" id="YVc-bm-fQU"/>
-                                </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZA-kk-Dqb" userLabel="SquarePictureLayOut 3">
                                 <rect key="frame" x="20" y="143" width="280" height="282"/>
@@ -137,7 +133,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qA4-0E-c9x">
-                                <rect key="frame" x="103" y="13" width="114.5" height="44"/>
+                                <rect key="frame" x="103.5" y="13" width="113" height="34"/>
                                 <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="29"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -212,6 +208,7 @@
                                 <variation key="heightClass=compact" constant="70"/>
                             </constraint>
                             <constraint firstItem="udN-Zh-gUy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="GsQ-Mx-lZQ"/>
+                            <constraint firstItem="YZA-kk-Dqb" firstAttribute="width" secondItem="hEW-in-kRj" secondAttribute="width" id="KXv-6f-x4X"/>
                             <constraint firstItem="hEW-in-kRj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="90" id="O29-XN-81R"/>
                             <constraint firstItem="qA4-0E-c9x" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="13" id="Rd5-RT-pHj">
                                 <variation key="heightClass=compact" constant="5"/>
@@ -261,6 +258,7 @@
                                 <include reference="VGw-TF-Gj2"/>
                                 <exclude reference="rfc-v4-778"/>
                                 <include reference="vZs-gg-o1M"/>
+                                <exclude reference="KXv-6f-x4X"/>
                                 <include reference="VIq-Zy-viN"/>
                                 <exclude reference="XCL-fW-cj4"/>
                                 <exclude reference="abV-bq-LRv"/>
