@@ -27,7 +27,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                 }
                 return orientation
             }
-            return nil
+            return UIApplication.shared.statusBarOrientation
         }
         
     }
