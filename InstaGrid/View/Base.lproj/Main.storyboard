@@ -64,7 +64,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="didTapAddPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Be-cA-7gS"/>
+                                                            <action selector="didTapAddPictureButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Be-cA-7gS"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rcg-Nz-raY" userLabel="buttonPicture2">
@@ -77,7 +77,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="didTapAddPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HlU-Qc-p5f"/>
+                                                            <action selector="didTapAddPictureButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HlU-Qc-p5f"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -95,7 +95,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="didTapAddPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ciS-5o-vMA"/>
+                                                            <action selector="didTapAddPictureButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ciS-5o-vMA"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="237" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FM1-0N-f7W" userLabel="buttonPicture4">
@@ -108,7 +108,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="didTapAddPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l2R-yx-ENV"/>
+                                                            <action selector="didTapAddPictureButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l2R-yx-ENV"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -144,6 +144,8 @@
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" adjustsImageSizeForAccessibilityContentSizeCategory="YES" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vz-6f-iP8">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                         <state key="normal" backgroundImage="Layout 1"/>
+                                        <state key="disabled" backgroundImage="Layout 1"/>
+                                        <state key="selected" image="Selected" backgroundImage="Layout 1"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="5"/>
@@ -156,6 +158,8 @@
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" adjustsImageSizeForAccessibilityContentSizeCategory="YES" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pow-QQ-Q8c">
                                         <rect key="frame" x="92" y="0.0" width="80" height="80"/>
                                         <state key="normal" backgroundImage="Layout 2"/>
+                                        <state key="disabled" backgroundImage="Layout 2"/>
+                                        <state key="selected" image="Selected" backgroundImage="Layout 2"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="5"/>
@@ -170,6 +174,9 @@
                                         <state key="normal" image="Selected" backgroundImage="Layout 3">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                         </state>
+                                        <state key="disabled" backgroundImage="Layout 3"/>
+                                        <state key="selected" image="Selected" backgroundImage="Layout 3"/>
+                                        <state key="highlighted" backgroundImage="Layout 3"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="5"/>
@@ -237,10 +244,10 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="avi-aX-4u9"/>
-                                <exclude reference="SJx-jY-5cv"/>
                                 <exclude reference="O29-XN-81R"/>
                                 <exclude reference="VGw-TF-Gj2"/>
                                 <exclude reference="vZs-gg-o1M"/>
+                                <exclude reference="SJx-jY-5cv"/>
                                 <exclude reference="7ax-tL-EOY"/>
                                 <exclude reference="cka-jx-8nT"/>
                                 <exclude reference="o9d-lr-CVc"/>
@@ -252,12 +259,12 @@
                         <variation key="heightClass=compact">
                             <mask key="constraints">
                                 <include reference="avi-aX-4u9"/>
-                                <exclude reference="RhG-fu-PzY"/>
-                                <include reference="SJx-jY-5cv"/>
                                 <exclude reference="CQz-dz-PaA"/>
                                 <include reference="VGw-TF-Gj2"/>
                                 <exclude reference="rfc-v4-778"/>
                                 <include reference="vZs-gg-o1M"/>
+                                <exclude reference="RhG-fu-PzY"/>
+                                <include reference="SJx-jY-5cv"/>
                                 <exclude reference="KXv-6f-x4X"/>
                                 <include reference="VIq-Zy-viN"/>
                                 <exclude reference="XCL-fW-cj4"/>
@@ -290,15 +297,15 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="squarrePictureLayout" destination="YZA-kk-Dqb" id="Dqc-AD-noB"/>
-                        <outlet property="txtSwipeToShare" destination="sZG-Gj-sxb" id="STW-EV-zMs"/>
-                        <outletCollection property="buttonLayout" destination="9vz-6f-iP8" collectionClass="NSMutableArray" id="2OZ-fV-UEm"/>
-                        <outletCollection property="buttonLayout" destination="Pow-QQ-Q8c" collectionClass="NSMutableArray" id="4W4-Ud-qna"/>
-                        <outletCollection property="buttonLayout" destination="nQb-DG-M2j" collectionClass="NSMutableArray" id="jm6-Pr-PdT"/>
-                        <outletCollection property="buttonPicture" destination="lCG-VP-U3i" collectionClass="NSMutableArray" id="HyN-7R-z0E"/>
-                        <outletCollection property="buttonPicture" destination="Rcg-Nz-raY" collectionClass="NSMutableArray" id="S3i-oY-CeZ"/>
-                        <outletCollection property="buttonPicture" destination="FM1-0N-f7W" collectionClass="NSMutableArray" id="ihK-IS-1VB"/>
-                        <outletCollection property="buttonPicture" destination="rri-bb-DGU" collectionClass="NSMutableArray" id="WOd-Pw-rcj"/>
+                        <outlet property="squarrePictureLayoutView" destination="YZA-kk-Dqb" id="Dqc-AD-noB"/>
+                        <outlet property="txtSwipeToShareLabel" destination="sZG-Gj-sxb" id="STW-EV-zMs"/>
+                        <outletCollection property="buttonsLayout" destination="9vz-6f-iP8" collectionClass="NSMutableArray" id="2OZ-fV-UEm"/>
+                        <outletCollection property="buttonsLayout" destination="Pow-QQ-Q8c" collectionClass="NSMutableArray" id="4W4-Ud-qna"/>
+                        <outletCollection property="buttonsLayout" destination="nQb-DG-M2j" collectionClass="NSMutableArray" id="jm6-Pr-PdT"/>
+                        <outletCollection property="buttonsPictures" destination="lCG-VP-U3i" collectionClass="NSMutableArray" id="HyN-7R-z0E"/>
+                        <outletCollection property="buttonsPictures" destination="Rcg-Nz-raY" collectionClass="NSMutableArray" id="S3i-oY-CeZ"/>
+                        <outletCollection property="buttonsPictures" destination="FM1-0N-f7W" collectionClass="NSMutableArray" id="ihK-IS-1VB"/>
+                        <outletCollection property="buttonsPictures" destination="rri-bb-DGU" collectionClass="NSMutableArray" id="WOd-Pw-rcj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

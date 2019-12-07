@@ -12,7 +12,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     var currentButton : UIButton?
     var currentButtonLayOut : UIButton?
-    var imageButton : UIImage?
     var photosArray = [UIImage]()
     
     var statusbarOrientation : UIInterfaceOrientation? {
@@ -29,16 +28,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             }
             return UIApplication.shared.statusBarOrientation
         }
-        
     }
     
-    @IBOutlet weak var txtSwipeToShare: UILabel!
-    @IBOutlet var buttonPicture: [UIButton]!
-    @IBOutlet weak var squarrePictureLayout: UIView!
-    @IBOutlet var buttonLayout: [UIButton]!
+    @IBOutlet weak var txtSwipeToShareLabel: UILabel!
+    @IBOutlet var buttonsPictures: [UIButton]!
+    @IBOutlet weak var squarrePictureLayoutView: UIView!
+    @IBOutlet var buttonsLayout: [UIButton]!
     
     /// Permet d'ajouter des photos via la library
-    @IBAction private func didTapAddPicture(_ sender: UIButton) {
+    @IBAction private func didTapAddPictureButton(_ sender: UIButton) {
         currentButton = sender
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -46,10 +44,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         imagePicker.allowsEditing = false
         present (imagePicker,animated: true, completion: nil )
         //Animation et changement du texte à la fermture de la fenêtre de partage
-        self.txtSwipeToShare.alpha = 0
+        self.txtSwipeToShareLabel.alpha = 0
         UIView.animate(withDuration: 0.5){
-            self.txtSwipeToShare.text = "Swipe to share"
-            self.txtSwipeToShare.alpha = 1
+            self.txtSwipeToShareLabel.text = "Swipe to share"
+            self.txtSwipeToShareLabel.alpha = 1
         }
     }
     
@@ -57,6 +55,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     func imagePickerController(_ picker: UIImagePickerController,  didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
         
         picker.dismiss(animated: true, completion: nil)
+        
         if let image = info[.originalImage] as? UIImage {
             currentButton!.setImage(image, for: .normal)
             //ne deforme pas l'image et s'adapte à l'espace
@@ -67,21 +66,19 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     /// initialisation de la Gesture pour viewDidload
     func initalisationSwipeGesture() {
-        let topSwipeGesture = UISwipeGestureRecognizer(target: self, action:#selector(SwipeActionUp(_:)))
+        let topSwipeGesture = UISwipeGestureRecognizer(target: self, action:#selector(swipeActionUp(_:)))
         topSwipeGesture.direction = .up
         self.view.addGestureRecognizer(topSwipeGesture)
         
         
-        let leftSwipeGesture = UISwipeGestureRecognizer(target: self, action:#selector(SwipeActionLeft(_:)))
+        let leftSwipeGesture = UISwipeGestureRecognizer(target: self, action:#selector(swipeActionLeft(_:)))
         leftSwipeGesture.direction = .left
         self.view.addGestureRecognizer(leftSwipeGesture)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         initalisationSwipeGesture()
-        
     }
     
     /// Petite animation (fondu) des buttons Layout lorsqu'on clique dessus
@@ -97,21 +94,21 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     func changeImageButtonLayoutIfSelected (_ sender : UIButton) {
         let tagButtonLayout = currentButtonLayOut?.tag
         switch tagButtonLayout {
-        case 1: buttonLayout[0].setImage(#imageLiteral(resourceName: "Selected.png") , for: .normal)
-        buttonLayout[2].setImage(nil, for: .normal)
-        buttonLayout[1].setImage(nil, for: .normal)
-        buttonPicture[0].isHidden = true
-        buttonPicture[3].isHidden = false
-        case 2: buttonLayout[1].setImage(#imageLiteral(resourceName: "Selected.png") , for: .normal)
-        buttonLayout[0].setImage(nil, for: .normal)
-        buttonLayout[2].setImage(nil, for: .normal)
-        buttonPicture[0].isHidden = false
-        buttonPicture[3].isHidden = true
-        case 3: buttonLayout[2].setImage(#imageLiteral(resourceName: "Selected.png") , for: .normal)
-        buttonLayout[0].setImage(nil, for: .normal)
-        buttonLayout[1].setImage(nil, for: .normal)
-        buttonPicture[0].isHidden = false
-        buttonPicture[3].isHidden = false
+        case 1: buttonsLayout[0].setImage(#imageLiteral(resourceName: "Selected.png") , for: .normal)
+            buttonsLayout[2].setImage(nil, for: .normal)
+            buttonsLayout[1].setImage(nil, for: .normal)
+            buttonsPictures[0].isHidden = true
+            buttonsPictures[3].isHidden = false
+        case 2: buttonsLayout[1].setImage(#imageLiteral(resourceName: "Selected.png") , for: .normal)
+            buttonsLayout[0].setImage(nil, for: .normal)
+            buttonsLayout[2].setImage(nil, for: .normal)
+            buttonsPictures[0].isHidden = false
+            buttonsPictures[3].isHidden = true
+        case 3: buttonsLayout[2].setImage(#imageLiteral(resourceName: "Selected.png") , for: .normal)
+            buttonsLayout[0].setImage(nil, for: .normal)
+            buttonsLayout[1].setImage(nil, for: .normal)
+            buttonsPictures[0].isHidden = false
+            buttonsPictures[3].isHidden = false
             
         default : break
             
@@ -122,7 +119,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBAction func buttonLayOut(_ sender: UIButton) {
         animateButtonLayOut(sender)
         changeImageButtonLayoutIfSelected(sender)
-        
     }
     
     /// On partage les images transformées.
@@ -132,15 +128,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         // Permet de faire l'animation inverse à la fermeture de la fenêtre de partage
         share.completionWithItemsHandler = {  activity, success, items, error in
             UIView.animate(withDuration: 0.5, animations: {
-                self.squarrePictureLayout.transform = .identity
-                self.squarrePictureLayout.alpha = 1
+                self.squarrePictureLayoutView.transform = .identity
+                self.squarrePictureLayoutView.alpha = 1
             }, completion: nil)
         }
     }
     
     
     /// On controle s'il y a au moins une image dans le tableau pour partager
-    func controlImageButton () -> Bool {
+    func controlImageButtonBool () -> Bool {
         if photosArray.count > 0 {
             return true
         }
@@ -148,38 +144,38 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     /// Si l'orientation est en mode portrait on execute la suite : Si il y a au moins une image dans le tableau, on partage,  sinon on affiche un message d'erreur avec une petite animation.
-    @IBAction func SwipeActionUp(_ sender: UISwipeGestureRecognizer) {
+    @IBAction func swipeActionUp(_ sender: UISwipeGestureRecognizer) {
         guard let portrait = statusbarOrientation?.isPortrait else {return}
         if portrait {
-            if controlImageButton() == true {
+            if controlImageButtonBool() == true {
                 animateSwipeAndShare()
             } else {
                 UIView.animate(withDuration: 0.2){
-                    self.txtSwipeToShare.text = "Vous n'avez pas choisi \n d'image à partager ! "
-                    self.txtSwipeToShare.transform =
+                    self.txtSwipeToShareLabel.text = "Vous n'avez pas choisi \n d'image à partager ! "
+                    self.txtSwipeToShareLabel.transform =
                         CGAffineTransform(translationX: 0 , y:-15)
                 }
                 UIView.animate(withDuration: 0.4){
-                    self.txtSwipeToShare.transform = .identity
+                    self.txtSwipeToShareLabel.transform = .identity
                 }
             }
         }
     }
     
     /// Si l'orientation est en mode paysage on execute la suite : Si il y a au moins une image dans le tableau, on partage, sinon on affiche un message d'erreur avec une petite animation.
-    @IBAction func SwipeActionLeft(_ sender: UISwipeGestureRecognizer) {
+    @IBAction func swipeActionLeft(_ sender: UISwipeGestureRecognizer) {
         guard let landscape = statusbarOrientation?.isLandscape else {return}
         if landscape {
-            if controlImageButton() == true  {
+            if controlImageButtonBool() == true  {
                 animateSwipeAndShare()
             } else {
                 UIView.animate(withDuration: 0.2){ 
-                    self.txtSwipeToShare.text = "Vous n'avez pas choisi \n d'image à partager ! "
-                    self.txtSwipeToShare.transform =
+                    self.txtSwipeToShareLabel.text = "Vous n'avez pas choisi \n d'image à partager ! "
+                    self.txtSwipeToShareLabel.transform =
                         CGAffineTransform(translationX:-15, y:0)
                 }
                 UIView.animate(withDuration: 0.4){
-                    self.txtSwipeToShare.transform = .identity
+                    self.txtSwipeToShareLabel.transform = .identity
                 }
             }
         }
@@ -187,19 +183,18 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     /// Animation lors du swipe et partage.
     func animateSwipeAndShare () {
-        guard let image = squarrePictureLayout?.asImage() else {return}
+        guard let image = squarrePictureLayoutView?.asImage() else {return}
         guard let portrait = statusbarOrientation?.isPortrait else {return}
         if portrait {
             UIView.animate(withDuration: 1) {
                 
-                self.squarrePictureLayout.transform = CGAffineTransform(translationX: 0, y: -200)
-                self.squarrePictureLayout.alpha = 0
+                self.squarrePictureLayoutView.transform = CGAffineTransform(translationX: 0, y: -200)
+                self.squarrePictureLayoutView.alpha = 0
             }
         } else {
             UIView.animate(withDuration: 1){
-                self.squarrePictureLayout.transform = CGAffineTransform(translationX: -200, y: 0)
-                self.squarrePictureLayout.alpha = 0
-                
+                self.squarrePictureLayoutView.transform = CGAffineTransform(translationX: -200, y: 0)
+                self.squarrePictureLayoutView.alpha = 0
             }
         }
         self.sharePhoto(image : image)
