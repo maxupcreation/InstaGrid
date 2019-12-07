@@ -15,6 +15,7 @@
 		9C1415D823571B9300B301B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C1415D623571B9300B301B9 /* Main.storyboard */; };
 		9C1415DA23571B9900B301B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C1415D923571B9900B301B9 /* Assets.xcassets */; };
 		9C1415DD23571B9900B301B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C1415DB23571B9900B301B9 /* LaunchScreen.storyboard */; };
+		9CB40784239BF7AE00328C6D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB40783239BF7AD00328C6D /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		9C1415D923571B9900B301B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C1415DC23571B9900B301B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C1415DE23571B9900B301B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CB40783239BF7AD00328C6D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 		9C1415C423571B9300B301B9 = {
 			isa = PBXGroup;
 			children = (
+				9CB40783239BF7AD00328C6D /* Default-568h@2x.png */,
 				9C1415CF23571B9300B301B9 /* InstaGrid */,
 				9CA733E223571C64003591F3 /* Supporting Files */,
 				9C1415CE23571B9300B301B9 /* Products */,
@@ -168,6 +171,7 @@
 				9C00D464236F3FB50083A38A /* ThirstySoftRegular.otf in Resources */,
 				9C00D463236F3FB50083A38A /* Delm-Medium.otf in Resources */,
 				9C1415D823571B9300B301B9 /* Main.storyboard in Resources */,
+				9CB40784239BF7AE00328C6D /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +261,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "/Users/maxime/Desktop/instaGrid/InstaGridOk/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -312,7 +316,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "/Users/maxime/Desktop/instaGrid/InstaGridOk/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -327,8 +331,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "/Supporting Files/Info.plist";
+				DEVELOPMENT_TEAM = 2JZJR57TRU;
+				INFOPLIST_FILE = "/Users/maxime/Desktop/instaGrid/InstaGridOk/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -336,6 +342,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.openclassrooms.InstaGrid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -345,8 +352,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "/Supporting Files/Info.plist";
+				DEVELOPMENT_TEAM = 2JZJR57TRU;
+				INFOPLIST_FILE = "/Users/maxime/Desktop/instaGrid/InstaGridOk/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -354,6 +363,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.openclassrooms.InstaGrid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
